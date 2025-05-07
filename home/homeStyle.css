@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+* {
+    margin: 0 auto;
+}
+
+header {
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+#logo {
+    width: 10vw;
+}
+
+#logo img{
+    width: 100%;
+}
+
+#menu_1 {
+    width: 20vw;
+}
+
+#menu_1 ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+#menu_2 {
+    width: 20vw;
+}
+
+#menu_2 ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.menus a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Abel';
+    font-size: 1.5em;
+}
+
+.menus a:hover {
+    color: rgb(207, 128, 49);
+    font-size: 1.5em;
+}
+
+#home {
+    width: 100vw;
+    height: 85vh;
+    background-image: url(img/bar.jpg);
+    background-size: cover;
+}
+
+#home h1 {
+    color: white;
+    
+}
