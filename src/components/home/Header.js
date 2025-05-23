@@ -1,5 +1,6 @@
 import Logo from "./Logo"
 import styles from './Home.module.css'
+import { Link } from "react-router-dom"
 
 function Header(){
 
@@ -8,10 +9,10 @@ function Header(){
                 <Logo />
                 <nav className={styles.navBar}>
                     <ul className={styles.listaHeader}>
-                        <li><a href="#">Serviços</a></li>
-                        <li><a href="#">Sobre nós</a></li>
-                        <li><a href="#">Contato</a></li>
-                        <li><a href="#">Cadastre-se</a></li>
+                        <li><Link to="/servicos">Serviços</Link></li>
+                        <li><Link to="/sobre">Sobre nós</Link></li>
+                        <li><Link to="/contato">Contato</Link></li>
+                        <li><Link to="/login">Log-in</Link></li>
                     </ul>
                 </nav>
             </header>

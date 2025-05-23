@@ -17,7 +17,7 @@
 }
 
 .divLogo {
-    height: 16vh;
+    height: 15vh;
     width: 8vw;
     float: left;
 }
@@ -35,7 +35,7 @@
     text-decoration: none;
     color: #ffff;
     font-family: "Fredoka", serif;
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: 600;
     font-style: normal;
 }
@@ -44,30 +44,28 @@
     color: rgb(192, 122, 10);
 }
 
-.inicio {
-    position: relative;
+.home {
+    height: 77vh;
     width: 100vw;
-    height: 85vh;
+    position: relative;
     background: url('../img/wine.jpg');
     background-size: cover;
     z-index: 0;
     overflow: hidden;
-  }
-  
-  /* Overlay escuro */
-  .inicio::before {
+}
+
+.home::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
-  }
-  
-  /* Conteúdo por cima da imagem */
-  .sectionInicio {
+}
+
+.sectionHome {
     position: relative;
     z-index: 2;
     display: flex;
@@ -77,9 +75,9 @@
     height: 100%;
     text-align: center;
     color: #f0f0f0;
-  }
+}
 
-.pInicio {
+.pHome {
     margin: 0;
     font-family: 'Fredoka', serif;
     font-size: 1.6em;
@@ -87,18 +85,39 @@
 
 .letreiro {
    margin: 0;
+   width: 30%;
 }
 
-.h1Inicio {
-    margin: 0;
-    font-family: "Alfa slab one";
-    font-size: 4em;
-}
-
-.campoPesquisa{
+.campoPesquisa {
     margin: 1em;
     border: none;
     border-radius: 10px;
     height: 2em;
     width: 30%;
+}
+
+.footer {
+    background-color: #000000;
+    color: white;
+    min-height: 8vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pFooter,
+.aFooter {
+    font-family: 'Fredoka', serif;
+}
+
+.pFooter {
+    width: 30%;
+    font-size: 0.9em;
+}
+
+.aFooter {
+    font-size: 1em;
+    color: rgb(192, 122, 10);
 }

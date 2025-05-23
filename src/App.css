@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Luckiest+Guy&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
   margin: auto;
-  font-family: "Roboto";
 }
 
 
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
