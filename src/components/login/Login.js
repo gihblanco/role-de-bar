@@ -4,6 +4,7 @@ import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField, S
 import { useNavigate } from "react-router-dom";
 import CadastroConsumidor from "./CadastroConsumidor";
 import CadastroEstabelecimento from "./CadastroEstabelecimento";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 
@@ -28,16 +29,15 @@ function Login() {
         handleClose();
     }
 
-    function useRedirecionar({ inputValue }) {
-        const handleRedirect = () => {
-            if (inputValue === "consumidor") {
-                navigate("/CadastroConsumidor", { state: { inputValue } });
-            } else if (inputValue === "estabelecimento") {
-                navigate("/CadastroEstabelecimento", { state: { inputValue } });
-            }
-            return (<Button onClick={handleRedirect}>Enviar</Button>);
+    const useRedirecionar = () => {
+        handleCadClose();
+        if (inputValue === "consumidor") {
+            navigate("/CadastroConsumidor", { state: { inputValue } });
+        } else if (inputValue === "estabelecimento") {
+            navigate("/CadastroEstabelecimento", { state: { inputValue } });
         }
-    }
+    };
+
 
     return (
         <main>
@@ -62,6 +62,7 @@ function Login() {
                 <DialogTitle>Selecione o tipo de usuário:</DialogTitle>
                 <DialogContent>
                     <select id="tipo_usuario" onChange={handleChange} fullWidth>
+                        <option value="" disabled selected>Selecione uma opção</option>
                         <option value="consumidor">Consumidor</option>
                         <option value="estabelecimento">Estabelecimento</option>
                     </select>

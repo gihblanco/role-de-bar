@@ -1,10 +1,10 @@
 import React from 'react';
-import './CadastroConsumidor.css'; // Importando o CSS para estilização
+import './CadastroEstabelecimento.css'; // Importando o CSS para estilização
 
-function CadastroConsumidor() {
+function CadastroEstabelecimento() {
   return (
-    <div className="consumidor">
-      <h1>Cadastro de Consumidor</h1>
+    <div className="estabelecimento">
+      <h1>Cadastro de Estabelecimento</h1>
       <form>
         <div className="nome">
           <label htmlFor="nome">Nome</label>
@@ -31,3 +31,5 @@ function CadastroConsumidor() {
     </div>
   );
 }
+
+export default CadastroEstabelecimento;
