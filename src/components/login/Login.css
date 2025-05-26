@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Monaco&display=swap');
 
-main{
+.main_login {
     margin:auto;
     background-color: #ffffffd0;
 }
 
 .artigo_login {
-    margin-top: 150px;
+    margin-top: 70px;
     justify-content: center;
     align-items: center;
     height: 20vh;

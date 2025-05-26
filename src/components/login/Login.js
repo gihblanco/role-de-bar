@@ -38,7 +38,7 @@ function Login() {
 
 
     return (
-        <main>
+        <main className="main_login">
             <article className="artigo_login">
                 <p>Seja bem-vindo ao espaço mais interativo e fácil de usar para quem ama descobrir novos bares!</p>
             </article>
