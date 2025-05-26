@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/home/Home';
-import Sobre from './components/sobre/Sobre';
+import Sobre from './components/sobreNos/SobreNos';
 import Servicos from './components/servicos/Servicos';
 import Contato from './components/contato/Contato';
 import Header from './components/home/Header';
@@ -18,7 +18,7 @@ function App() {
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/servicos" element={<Servicos />} />
           <Route path="/contato" element={<Contato />} />
-          <Route path="/login" element={<Login />}/>
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
       </div>

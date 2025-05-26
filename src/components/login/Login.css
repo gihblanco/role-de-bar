@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Monaco&display=swap');
+
+main{
+    margin:auto;
+    background-color: #ffffffd0;
+}
+
+.artigo_login {
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    width: 100vw;
+    padding-top: 50px;
+    font-family: 'Monaco', monospace;
+    font-size: 1.5em;
+    color: #000000;
+}
+
+.artigo_login p {
+    width: 50%;;
+    font-family: 'Monaco';
+    font-size: 1.5em;
+    color: #000000;
+    text-align: center;
+    justify-content: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+label {
+    font-family: 'Monaco', monospace;
+    font-size: 1.2em;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 300px;
+    height: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Monaco', monospace;
+    font-size: 1em;
+}
+
+button {
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
+    background-color: #062b56;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Monaco', monospace;
+    font-size: 1em;
+}
+
+#recuperar_senha {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-family:sans-serif;
+    font-size: 1em;
+    color: #000000;
+    text-decoration: none;
+}
+
+#fazer_cadastro {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-family:sans-serif;
+    font-size: 1em;
+    color:#000000;
+    text-decoration: none;
+}
+
+a {
+    color: #102b8c;
+}
+a:hover {
+    color: #8c105a;
+    font-weight: bold;
+}
