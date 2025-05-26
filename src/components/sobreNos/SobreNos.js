@@ -9,9 +9,6 @@ function Sobre() {
             <p>Nosso compromisso é tornar a diversão mais acessível, ajudando a encontrar o ambiente certo para cada ocasião.</p>
 
             <image src="./img/bar_claro.jpg" />
-
-            <h2>Desenvolvedores</h2>
-            <p>Eliza Carla Valdiero, Giulia Monte Blanco, Mônica Madaloni e Tony Peres Pereira.</p>
         </main>
     )
 }

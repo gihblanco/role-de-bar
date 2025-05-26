@@ -6,11 +6,12 @@ main{
 }
 
 .artigo_login {
+    margin-top: 150px;
     justify-content: center;
     align-items: center;
     height: 20vh;
     width: 100vw;
-    padding-top: 50px;
+    padding-top: 15px;
     font-family: 'Monaco', monospace;
     font-size: 1.5em;
     color: #000000;
@@ -27,6 +28,7 @@ main{
 }
 
 form {
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;

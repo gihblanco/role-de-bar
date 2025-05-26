@@ -1,0 +1,37 @@
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.estabelecimento{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.estabelecimento h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.estabelecimento label {
+  margin-bottom: 8px;
+  display: block;
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.estabelecimento input {
+  width: 300px;
+  padding: 7px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}

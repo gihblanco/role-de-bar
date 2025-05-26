@@ -7,11 +7,11 @@ function CadastroEstabelecimento() {
       <h1>Cadastro de Estabelecimento</h1>
       <form>
         <div className="nome">
-          <label htmlFor="nome">Nome</label>
+          <label htmlFor="nome">Nome do Titular</label>
           <input type="text" className="form-control" id="nome" placeholder="Digite seu nome" />
         </div>
         <div className="cpf_titular">
-          <label htmlFor="cpf">CPF</label>
+          <label htmlFor="cpf">CPF do titular</label>
           <input type="text" className="form-control" id="cpf_titular" placeholder="CPF do titular:" />
         </div>
         <div className="email">
