@@ -3,7 +3,6 @@ import './CadastroConsumidor.css'; // Importando o CSS para estilização
 
 function CadastroConsumidor() {
   return (
-    <main>
       <div className="consumidor">
         <h1>Cadastro de Consumidor</h1>
         <form>
@@ -30,7 +29,6 @@ function CadastroConsumidor() {
           <button type="submit" className="btn btn-primary">Cadastrar</button>
         </form>
       </div>
-    </main>
   );
 }
 

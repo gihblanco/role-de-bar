@@ -2,8 +2,6 @@ import styles from "./Login.css";
 import React, { useState } from "react";
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField, StepConnector, setRef } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import CadastroConsumidor from "./CadastroConsumidor";
-import CadastroEstabelecimento from "./CadastroEstabelecimento";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
