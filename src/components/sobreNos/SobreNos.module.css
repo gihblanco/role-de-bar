@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+.sobreNos {
+    min-height: 180vh;
+    width: 100vw;
+    font-family: 'Fredoka', serif;
+}
+
+.textosComplementares {
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.projeto {
+    height: 40vh;
+    margin: 0;
+}
+
+.objetivo {
+    height: 40vh;
+    display: flex;
+    margin: 0;
+}
+
+.time {
+    width: 100vw;
+    height: 80vh;
+}
+
+.articleTextos {
+    height: 30vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.articleTextos h1 {
+    font-size: 1.6em;
+}
+
+.textoIntroducaoEquipe {
+    width: 45vw;
+}
+
+.membros{
+    display: flex;
+    align-items: flex-end;
+    width: 80vw;
+}
+
+.sobreEliza {
+    height: 50vh;
+    width: 20vw;
+    background-color: #b9f0d7;
+    border-top-left-radius: 20em;
+    border-top-right-radius: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.sobreEliza p {
+    margin: 0;
+}
+
+.elizaFoto {
+    width: 12vw;
+    border-radius: 50%;
+}
+
+.nomeEcargoEliza{
+
+}
+
+.sobreGiulia {
+    height: 45vh;
+    width: 20vw;
+    background-color: #c9e8ff;
+    margin-top: 5vh;
+    border-top-left-radius: 20em;
+    border-top-right-radius: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.sobreGiulia p {
+    margin: 0;
+}
+
+.giuliaFoto {
+    width: 12vw;
+    border-radius: 50%;
+}
+
+.sobreMonica {
+    height: 50vh;
+    width: 20vw;
+    background-color:  #b8baff;
+    border-top-left-radius: 20em;
+    border-top-right-radius: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.sobreMonica p {
+    margin: 0;
+}
+
+.monicaFoto {
+    width: 12vw;
+    border-radius: 50%;
+}
+
+.sobreTony {
+    height: 45vh;
+    width: 20vw;
+    background-color: #6666ff;
+    margin-top: 5vh;
+    border-top-left-radius: 20em;
+    border-top-right-radius: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.sobreTony p {
+    margin: 0;
+}
+
+.tonyFoto {
+    width: 12vw;
+    border-radius: 50%;
+}

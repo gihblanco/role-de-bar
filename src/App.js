@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import { useState } from 'react';
 import Home from './components/home/Home';
 import Sobre from './components/sobreNos/SobreNos';
 import Servicos from './components/servicos/Servicos';
@@ -11,6 +12,9 @@ import CadastroConsumidor from "./components/login/CadastroConsumidor";
 import CadastroEstabelecimento from './components/login/CadastroEstabelecimento'
 
 function App() {
+
+   // const [logged, setLogged] = useState(false); 
+
   return (
     <BrowserRouter>
       <div className="App">

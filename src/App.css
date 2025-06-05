@@ -8,3 +8,8 @@ body {
   height: 100%;
   overflow-x: hidden;
 }
+
+main {
+  min-height: 77vh;
+  width: 100vw;
+}

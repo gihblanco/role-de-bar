@@ -1,17 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Monaco&display=swap');
-
-.main_login {
-    margin:auto;
-    background-color: #ffffffd0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
 .artigo_login {
-    margin-top: 70px;
     justify-content: center;
     align-items: center;
-    height: 20vh;
+    height: 20%;
     width: 100vw;
-    padding-top: 15px;
+    padding-top: 2em;
     font-family: 'Monaco', monospace;
     font-size: 1.5em;
     color: #000000;
