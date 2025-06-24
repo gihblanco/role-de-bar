@@ -17,6 +17,33 @@
     margin: 0;
 }
 
+.projeto div {
+    height: 100%;
+    background-color: black;
+    display: flex;
+    text-align: center;
+}
+
+.projeto p {
+    font-weight: 600;
+    width: 60vw;
+    font-size: 1.3em;
+    color: white;
+}
+
+.polaroid {
+    width: 12vw;
+}
+
+.futebol {
+    width: 12vw;
+    height: 30vh;
+}
+
+.aniversario {
+    width: 12vw;
+}
+
 .objetivo {
     height: 40vh;
     display: flex;
