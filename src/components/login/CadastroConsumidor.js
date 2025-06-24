@@ -38,7 +38,7 @@ function CadastroConsumidor() {
   }
 
   return (
-    <div className="consumidor">
+    <main className="consumidor">
       <h1>Cadastro de Consumidor</h1>
       <form>
         <div className="nome">
@@ -63,7 +63,7 @@ function CadastroConsumidor() {
         </div>
         <button type="button" className="btn btn-primary" onClick={adicionarConsumidor}>Cadastrar</button>
       </form>
-    </div>
+    </main>
   );
 }
 

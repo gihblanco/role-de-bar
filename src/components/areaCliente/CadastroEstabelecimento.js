@@ -1,6 +1,6 @@
-function CadastroEstabelecimento(){
+function CadastroEstabelecimento({setIsLogged}){
     return (
-        <main>
+        <main className="cadastro_estabelecimentos">
 
         </main>
     )

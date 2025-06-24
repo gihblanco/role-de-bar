@@ -1,12 +1,14 @@
-import styles from "./Login.css";
+import "./Login.css";
 import React, { useState } from "react";
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField, StepConnector, setRef } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 
-function Login() {
+function Login({setIsLogged}) {
+
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
 
     const [open, setOpen] = useState(false);
     const [cadDialog, setCadDialog] = useState(false);
@@ -30,24 +32,50 @@ function Login() {
     const useRedirecionar = () => {
         handleCadClose();
         if (inputValue === "consumidor") {
-            navigate("/CadastroConsumidor", { state: { inputValue } });
+            navigate("/cadastroConsumidor", { state: { inputValue } });
         } else if (inputValue === "proprietario") {
-            navigate("/CadastroProprietario", { state: { inputValue } });
+            navigate("/cadastroProprietario", { state: { inputValue } });
         }
     };
 
+    const verificaDadosLogin = (email, senha) => {
+        const consumidores = JSON.parse(localStorage.getItem("consumidores")) || [];
+        const proprietarios = JSON.parse(localStorage.getItem("proprietarios")) || [];
+
+        const consumidor = consumidores.find(user => user.email === email && user.senha === senha);
+        if (consumidor) return { tipo: 'consumidor', usuario: consumidor };
+
+        const proprietario = proprietarios.find(user => user.email === email && user.senha === senha);
+        if (proprietario) return { tipo: 'proprietario', usuario: proprietario };
+
+        return null;
+
+    }
+
+    const login = (e) => {
+        e.preventDefault();
+        const resultado = verificaDadosLogin(email, senha)
+
+        if(resultado){
+            localStorage.setItem("isLogged", "true");
+            setIsLogged(true); 
+            navigate(`/estabelecimentos/${resultado.tipo}`)
+        } else {
+            alert('Email ou senha inválidos');
+        }
+    }
 
     return (
         <main className="main_login">
             <article className="artigo_login">
                 <p>Seja bem-vindo ao espaço mais interativo e fácil de usar para quem ama descobrir novos bares!</p>
             </article>
-            <form action="login" method="post">
+            <form>
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required></input>
+                <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required></input>
                 <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" required></input>
-                <button type="submit">Entrar</button>
+                <input type="password" id="senha" name="senha" value={senha} onChange={(e) => setSenha(e.target.value)} required></input>
+                <button type="button" onClick={login}>Entrar</button>
             </form>
             <div id="recuperar_senha">
                 <p>Esqueceu sua senha? <a href="#" onClick={handleOpen}>Clique aqui</a></p>
@@ -67,7 +95,7 @@ function Login() {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleCadClose}>Cancelar</Button>
-                    <Button onClick={useRedirecionar}>Enviar</Button>
+                    <Button onClick={useRedirecionar}>Prosseguir</Button>
                 </DialogActions>
             </Dialog>
 

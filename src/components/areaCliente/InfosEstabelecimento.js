@@ -1,6 +1,8 @@
 function InfosEstabelecimento(){
     return (
-        <main></main>
+        <main>
+            
+        </main>
     )
 }
 

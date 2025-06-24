@@ -37,7 +37,7 @@ function CadastroProprietario() {
   }
 
   return (
-    <div className="estabelecimento">
+    <main className="estabelecimento">
       <h1>Cadastro de Proprietário</h1>
       <form>
         <div className="nome">
@@ -62,7 +62,7 @@ function CadastroProprietario() {
         </div>
         <button type="button" onClick={adicionarProprietario} className="btn btn-primary">Cadastrar</button>
       </form>
-    </div>
+    </main>
   );
 }
 
