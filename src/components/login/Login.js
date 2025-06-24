@@ -31,8 +31,8 @@ function Login() {
         handleCadClose();
         if (inputValue === "consumidor") {
             navigate("/CadastroConsumidor", { state: { inputValue } });
-        } else if (inputValue === "estabelecimento") {
-            navigate("/CadastroEstabelecimento", { state: { inputValue } });
+        } else if (inputValue === "proprietario") {
+            navigate("/CadastroProprietario", { state: { inputValue } });
         }
     };
 
@@ -62,7 +62,7 @@ function Login() {
                     <select id="tipo_usuario" onChange={handleChange} fullWidth>
                         <option value="" disabled selected>Selecione uma opção</option>
                         <option value="consumidor">Consumidor</option>
-                        <option value="estabelecimento">Estabelecimento</option>
+                        <option value="proprietario">Proprietário</option>
                     </select>
                 </DialogContent>
                 <DialogActions>

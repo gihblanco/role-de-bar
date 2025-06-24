@@ -1,28 +1,27 @@
 import React from 'react';
-import './CadastroConsumidor.css'; // Importando o CSS para estilização
+import './CadastroProprietario.css'; // Importando o CSS para estilização
 import { useState } from 'react';
 
-function CadastroConsumidor() {
+function CadastroProprietario() {
 
-  const [nome, setNome] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  const [nome, setNome] = useState("")
+  const [cpf, setCpf] = useState("")
+  const [email, setEmail] = useState("")
+  const [senha, setSenha] = useState("")
   const [confirmacao, setConfirmacao] = useState("")
 
-  const adicionarConsumidor = () => {
-
-    if (senha == confirmacao) {
-      const consumidor = {
+  const adicionarProprietario = () => {
+     if (senha == confirmacao) {
+      const proprietario = {
         nome: nome,
         cpf: cpf,
         email: email,
         senha: senha
       }
 
-      const consumidoresSalvos = JSON.parse(localStorage.getItem("consumidores")) || [];
-      consumidoresSalvos.push(consumidor);
-      localStorage.setItem("consumidores", JSON.stringify(consumidoresSalvos));
+      const proprietariosSalvos = JSON.parse(localStorage.getItem("proprietarios")) || [];
+      proprietariosSalvos.push(proprietario);
+      localStorage.setItem("proprietarios", JSON.stringify(proprietariosSalvos));
 
       setNome("")
       setCpf("")
@@ -38,20 +37,20 @@ function CadastroConsumidor() {
   }
 
   return (
-    <div className="consumidor">
-      <h1>Cadastro de Consumidor</h1>
+    <div className="estabelecimento">
+      <h1>Cadastro de Proprietário</h1>
       <form>
         <div className="nome">
-          <label htmlFor="nome">Nome</label>
+          <label htmlFor="nome">Nome do Titular</label>
           <input type="text" className="form-control" id="nome" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Digite seu nome" />
         </div>
-        <div className="cpf">
-          <label htmlFor="cpf">CPF</label>
-          <input type="text" className="form-control" id="cpf" value={cpf} onChange={(e) => setCpf(e.target.value)} placeholder="CPF:" />
+        <div className="cpf_titular">
+          <label htmlFor="cpf">CPF do titular</label>
+          <input type="text" className="form-control" id="cpf_titular" value={cpf} onChange={(e) => setCpf(e.target.value)} placeholder="CPF do titular:" />
         </div>
         <div className="email">
           <label htmlFor="email">E-mail</label>
-          <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu e-mail" />
+          <input type="email" className="form-control" id="email_titular" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite o e-mail do titular:" />
         </div>
         <div className="senha">
           <label htmlFor="senha">Senha</label>
@@ -61,10 +60,10 @@ function CadastroConsumidor() {
           <label htmlFor="senha">Confirmação de Senha</label>
           <input type="password" className="form-control" id="confirmacao" value={confirmacao} onChange={(e) => setConfirmacao(e.target.value)} placeholder="Confirme a sua senha:" />
         </div>
-        <button type="button" className="btn btn-primary" onClick={adicionarConsumidor}>Cadastrar</button>
+        <button type="button" onClick={adicionarProprietario} className="btn btn-primary">Cadastrar</button>
       </form>
     </div>
   );
 }
 
-export default CadastroConsumidor;
+export default CadastroProprietario;

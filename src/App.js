@@ -9,7 +9,7 @@ import Header from './components/home/Header';
 import Login from './components/login/Login';
 import Footer from './components/home/Footer';
 import CadastroConsumidor from "./components/login/CadastroConsumidor";
-import CadastroEstabelecimento from './components/login/CadastroEstabelecimento'
+import CadastroProprietario from './components/login/CadastroProprietario'
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
           <Route path="/contato" element={<Contato />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cadastroConsumidor" element={<CadastroConsumidor />} />
-          <Route path="/cadastroEstabelecimento" element={<CadastroEstabelecimento />}/>
+          <Route path="/cadastroProprietario" element={<CadastroProprietario />}/>
         </Routes>
         <Footer />
       </div>
