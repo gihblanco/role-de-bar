@@ -8,46 +8,94 @@
 
 .textosComplementares {
     width: 100vw;
-    height: 100vh;
+    height: 140vh;
 
 }
 
 .projeto {
     height: 40vh;
-    margin: 0;
-}
-
-.projeto div {
-    height: 100%;
     background-color: black;
     display: flex;
     text-align: center;
+    margin: 0;
 }
 
 .projeto p {
     font-weight: 600;
-    width: 60vw;
+    width: 70vw;
     font-size: 1.3em;
     color: white;
 }
 
-.polaroid {
-    width: 12vw;
+
+.objetivo {
+    height: 60vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.futebol {
-    width: 12vw;
-    height: 30vh;
+.contemUmeDois {
+    width: 80vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.divUmobjetivo {
+    background-color: rgb(231, 231, 142);
+    width: 40vw;
+    height: 70vh;
+}
+
+.planejar {
+    width: 40vw;
+}
+
+.divUmobjetivo p {
+    margin-top: 1em;
+    width: 37vw;
+    font-weight: 500;
+}
+
+.divDoisobjetivo {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.divAniversario {
+    width: 100%;
+    display: flex;
+    background-color: #dca7f1;
+}
+
+.divAniversario p{
+    width: 20vw;
+    font-weight: 500;
 }
 
 .aniversario {
-    width: 12vw;
+    width: 13vw;
 }
 
-.objetivo {
-    height: 40vh;
+.divJogo {
+    width: 100%;
     display: flex;
-    margin: 0;
+    background-color: rgb(206, 245, 147);
+}
+
+.divJogo p {
+    width: 20vw;
+    font-weight: 500;
+}
+
+.futebol {
+    width: 13vw;
 }
 
 .time {
@@ -71,7 +119,7 @@
     width: 45vw;
 }
 
-.membros{
+.membros {
     display: flex;
     align-items: flex-end;
     width: 80vw;
@@ -98,7 +146,7 @@
     border-radius: 50%;
 }
 
-.nomeEcargoEliza{
+.nomeEcargoEliza {
     height: 2em;
     margin-bottom: 0;
 }
@@ -133,7 +181,7 @@
 .sobreMonica {
     height: 50vh;
     width: 20vw;
-    background-color:  #b8baff;
+    background-color: #b8baff;
     border-top-left-radius: 20em;
     border-top-right-radius: 20em;
     display: flex;

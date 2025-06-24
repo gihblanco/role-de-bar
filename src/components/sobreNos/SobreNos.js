@@ -2,8 +2,8 @@ import giulia from "../img/giulia.jpeg"
 import monica from "../img/monica.jpeg"
 import eliza from "../img/eliza.jpeg"
 import tony from "../img/tony.jpg"
-import styles from './SobreNos.module.css';
-import polaroid from '../img/polaroid.jpg'
+import styles from './SobreNos.module.css'
+import planejar from '../img/planejar.jpg'
 import futebol from '../img/futebol.jpg'
 import aniversario from '../img/aniversario.jpg'
 
@@ -12,23 +12,23 @@ function Sobre() {
         <main className={styles.sobreNos}>
             <section className={styles.textosComplementares}>
                 <article className={styles.projeto}>
-                    <div>
-                        <p>Nosso projeto nasceu da ideia de facilitar a busca por bares próximos, ajudando você a encontrar o local ideal para celebrar, reunir amigos e curtir um happy hour sem preocupações.</p>
-                    </div>
+                    <p>Nosso projeto nasceu da ideia de facilitar a busca por bares próximos, ajudando você a encontrar o local ideal para celebrar, reunir amigos e curtir um happy hour sem preocupações.</p>
                 </article>
                 <article className={styles.objetivo}>
-                    <div>
-                        <img src={polaroid} alt="Foto polaroid" className={styles.polaroid}></img>
-                        <p>Acreditamos que bons momentos devem ser simples de planejar. Por isso, queremos tornar a experiência de descobrir novos lugares rápida, intuitiva e personalizada para cada usuário.</p>
-                    </div>
-                    <div>
-                        <div>
-                            <img src={aniversario} alt="Foto de aniversario" className={styles.aniversario}></img>
-                            <p>Seja para um encontro casual, uma comemoração especial ou apenas relaxar depois do trabalho, estamos aqui para conectar você aos melhores destinos.</p>
+                    <div className={styles.contemUmeDois}>
+                        <div className={styles.divUmobjetivo}>
+                            <img src={planejar} alt="Foto planejar" className={styles.planejar}></img>
+                            <p>Acreditamos que bons momentos devem ser simples de planejar. Por isso, queremos tornar a experiência de descobrir novos lugares rápida, intuitiva e personalizada para cada usuário.</p>
                         </div>
-                        <div>
-                            <img src={futebol} alt="Foto torcedores do Brasil" className={styles.futebol}></img>
-                            <p>Nosso compromisso é tornar a diversão mais acessível, ajudando a encontrar o ambiente certo para cada ocasião.</p>
+                        <div className={styles.divDoisobjetivo}>
+                            <div className={styles.divAniversario}>
+                                <img src={aniversario} alt="Foto de aniversario" className={styles.aniversario}></img>
+                                <p>Seja para um encontro casual, uma comemoração especial ou apenas relaxar depois do trabalho, estamos aqui para conectar você aos melhores destinos.</p>
+                            </div>
+                            <div className={styles.divJogo}>
+                                <img src={futebol} alt="Foto torcedores do Brasil" className={styles.futebol}></img>
+                                <p>Nosso compromisso é tornar a diversão mais acessível, ajudando a encontrar o ambiente certo para cada ocasião.</p>
+                            </div>
                         </div>
                     </div>
                 </article>
