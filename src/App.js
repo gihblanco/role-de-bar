@@ -36,11 +36,11 @@ function AppContent({ isLogged, setIsLogged }) {
         <Route path="/cadastroProprietario" element={<CadastroProprietario />} />
         <Route path="/login" element={<Login setIsLogged={setIsLogged} />} />
         <Route path="/estabelecimentos/:tipo" element={<Estabelecimentos setIsLogged={setIsLogged} />} />
-        <Route path="/cadastroEstabelecimento" element={<CadastroEstabelecimento setIsLogged={setIsLogged} />} />
+        <Route path="/cadastroEstabelecimento/:tipo" element={<CadastroEstabelecimento setIsLogged={setIsLogged} />} />
       </Routes>
       <Footer />
     </div>
-  );
+  ); 
 }
 
 function App() {

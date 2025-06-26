@@ -3,7 +3,7 @@ import logo from '../img/logo-role-de-bar.png'
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LogoutIcon from '@mui/icons-material/Logout';
-import AddIcon from '@mui/icons-material/Add';
+import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 
 function Estabelecimentos({setIsLogged}) {
@@ -22,11 +22,11 @@ function Estabelecimentos({setIsLogged}) {
                 <img src={logo} alt="Logo rolê de bar" className='logo'></img>
                 <input placeholder='Buscar bares' className='search-bar'></input>
                 <nav className='menuIcones'>
-                    <button><PersonOutlineIcon className='perfil' /></button>
-                    <button><FavoriteBorderIcon className='favoritos' /></button>
+                    <button title='Perfil'><PersonOutlineIcon className='perfil' /></button>
+                    <button title='Favoritos'><FavoriteBorderIcon className='favoritos' /></button>
                     {tipo === 'proprietario' && (
-                        <Link to="/cadastroEstabelecimento">
-                            <button><AddIcon className='cadastro' /></button>
+                        <Link to={`/cadastroEstabelecimento/${tipo}`}>
+                            <button title='Meus estabelecimentos'><HomeWorkIcon className='meus_estabelecimentos'/></button>
                         </Link>
                     )
                     }
