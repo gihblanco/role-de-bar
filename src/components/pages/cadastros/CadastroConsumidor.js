@@ -2,7 +2,10 @@ import React from 'react';
 import './CadastroConsumidor.css'; // Importando o CSS para estilização
 import { useState } from 'react';
 
-function CadastroConsumidor() {
+function CadastroConsumidor({ setIsLogged }) {
+
+  localStorage.setItem("isLogged", "false");
+  setIsLogged(false)
 
   const [nome, setNome] = useState("");
   const [cpf, setCpf] = useState("");

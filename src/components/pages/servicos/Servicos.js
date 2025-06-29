@@ -1,4 +1,8 @@
-function Servicos() {
+function Servicos({ setIsLogged }) {
+    
+    localStorage.setItem("isLogged", "false");
+    setIsLogged(false)
+
     return (
         <main>
             <article id="saudacao">

@@ -2,7 +2,10 @@ import React from 'react';
 import './CadastroProprietario.css'; // Importando o CSS para estilização
 import { useState } from 'react';
 
-function CadastroProprietario() {
+function CadastroProprietario({ setIsLogged }) {
+
+  localStorage.setItem("isLogged", "false");
+  setIsLogged(false)
 
   const [nome, setNome] = useState("")
   const [cpf, setCpf] = useState("")
@@ -11,7 +14,7 @@ function CadastroProprietario() {
   const [confirmacao, setConfirmacao] = useState("")
 
   const adicionarProprietario = () => {
-     if (senha == confirmacao) {
+    if (senha == confirmacao) {
       const proprietario = {
         nome: nome,
         cpf: cpf,

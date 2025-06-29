@@ -1,4 +1,8 @@
-function Contato() {
+function Contato({ setIsLogged }) {
+
+    localStorage.setItem("isLogged", "false");
+    setIsLogged(false)
+
     return (
         <main>
             <h1>Desenvolvedores</h1>

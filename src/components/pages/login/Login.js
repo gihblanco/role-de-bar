@@ -7,6 +7,9 @@ import { useNavigate } from "react-router-dom";
 
 function Login({setIsLogged}) {
 
+    localStorage.setItem("isLogged", "false");
+    setIsLogged(false)
+
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
 

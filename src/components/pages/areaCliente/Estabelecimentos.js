@@ -1,5 +1,5 @@
 import './Estabelecimentos.css'
-import logo from '../img/logo-role-de-bar.png'
+import Logo from "../../img/Logo"
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -19,7 +19,7 @@ function Estabelecimentos({setIsLogged}) {
     return (
         <main className='main_estabelecimentos'>
             <div className='header_estabelecimentos'>
-                <img src={logo} alt="Logo rolê de bar" className='logo'></img>
+                <Logo className='logo'/>
                 <input placeholder='Buscar bares' className='search-bar'></input>
                 <nav className='menuIcones'>
                     <button title='Perfil'><PersonOutlineIcon className='perfil' /></button>
