@@ -3,6 +3,7 @@ import './CadastroEstabelecimento.css'
 import { useParams, useNavigate } from 'react-router-dom';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import CloseIcon from '@mui/icons-material/Close';
+import SelectBairro from '../../form/SelectBairro';
 
 function CadastroEstabelecimento({ setIsLogged }) {
     const { tipo } = useParams();
@@ -49,8 +50,7 @@ function CadastroEstabelecimento({ setIsLogged }) {
                             <input id="numero"></input>
                             <label for="complemento">Complemento:</label>
                             <input id="complemento"/>
-                            <label for="bairro">Bairro:</label>
-                            {/* aqui vai ser um select */}
+                            <SelectBairro />
                             <input  id="bairro"/>
                             <label for="cidade">Cidade:</label>
                             <input id="cidade"/>

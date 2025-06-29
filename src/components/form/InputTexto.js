@@ -1,6 +1,6 @@
-function InputTexto(){
+function InputTexto(props){
     return (
-        <input />
+        <input {...props}/>
     )
 }
 
