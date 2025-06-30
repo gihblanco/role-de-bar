@@ -16,7 +16,7 @@ function Contato({ setIsLogged }) {
             <div className='cabecalho'>
                 <h1 className="titulo">Fale com a gente</h1>
                 <p className="descricao">
-                    Tem alguma dúvida, sugestão ou quer anunciar seu bar? Manda uma mensagem pra gente!
+                    Tem alguma dúvida ou sugestão? Manda uma mensagem pra gente!
                 </p>
             </div>
             <div>

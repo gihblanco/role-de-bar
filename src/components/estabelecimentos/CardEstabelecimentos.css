@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+.lista-estabelecimentos {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1.5em;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.card-horizontal {
+  display: flex;
+  background-color: #fff4c2; /* amarelo mais claro */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  height: 140px;
+}
+
+.card-horizontal:hover {
+  transform: scale(1.01);
+}
+
+.imagem-card {
+  width: 140px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-card {
+  padding: 0.8em 1em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info-card h2 {
+  color: #f66e06;
+  font-size: 1.1em;
+  margin: 0;
+}
+
+.info-card p {
+  margin: 0.2em 0;
+  font-size: 0.85em;
+  color: #333;
+}
+
+.tag-musica,
+.tag-comodidades {
+  font-size: 0.75em;
+  color: #555;
+}
+
+.botao-vermais {
+  align-self: flex-start;
+  margin-top: 0.3em;
+  padding: 0.3em 0.8em;
+  background-color: #f66e06;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8em;
+  cursor: pointer;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.botao-vermais:hover {
+  background-color: #f8a60d;
+}

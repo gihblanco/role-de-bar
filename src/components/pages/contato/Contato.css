@@ -8,25 +8,28 @@
 }
 
 .contato-container {
-  max-width: 80vw;
-  margin: 3rem auto;
+  width: 80vw;
+  height: 100vh;
+  margin: auto;
+  margin-top: 3em;
   border-radius: 1.5rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   font-family: 'Fredoka', serif;
 }
 
 .cabecalho {
-  width: 100%;
+  width: auto;
   background: linear-gradient(to right, var(--laranja-gradiente-start), var(--laranja-gradiente-end));
   color: white;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
 }
+
 
 .cabecalho .titulo {
   font-size: 2rem;
@@ -42,9 +45,9 @@
 }
 
 .contato-container>div:last-child {
-  width: 100%;
+  width: auto;
   background-color: var(--laranja-claro);
-  padding: 2.5rem 2rem;
+  padding: 2.5rem;
   border-bottom-left-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
 }
@@ -52,6 +55,7 @@
 .form-contato {
   width: 100%;
   max-width: 420px;
+  margin: auto;
 }
 
 .form-contato label {

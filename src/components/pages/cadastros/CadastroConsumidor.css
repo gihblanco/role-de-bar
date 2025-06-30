@@ -1,28 +1,63 @@
-.consumidor{
-  margin-top: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+.estabelecimento {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 77vh;
+  font-family: 'Fredoka', sans-serif;
+  width: 70vw;
+  margin: 2em auto;
+  padding: 2em;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.consumidor h1 {
-  font-size: 2.5rem;
+.estabelecimento h1 {
+  color: #f66e06;
+  margin-bottom: 1em;
+}
+
+.formulario-cadastro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario-cadastro .campo {
+  width: 60%;
+  margin-bottom: 1em;
+}
+
+.campo label {
+  font-size: large;
+  margin-bottom: 0.5em;
+  display: block;
   color: #333;
 }
 
-.consumidor label {
-  margin-bottom: 8px;
-  display: block;
-  color: #555;
-  font-size: 1.2rem;
+.campo input {
+  width: 100%;
+  height: 2.5em;
+  border-radius: 4px;
+  border: #f9a260 1px solid;
+  padding: 0.5em;
+  font-family: 'Fredoka', sans-serif;
 }
 
-.consumidor input {
-  width: 300px;
-  padding: 7px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+.botao-cadastro {
+  width: 61%;
+  height: 2.2em;
+  border-radius: 4px;
+  border: #f9a260 1px solid;
+  background-color: #f66e06;
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+  font-size: large;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao-cadastro:hover {
+  background-color: #f8a60d;
 }
