@@ -10,6 +10,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15vh;
+    height: 20vh;
     width: 100vw;
+}
+
+.conteudo {
+    display: flex;
+    width: 100vw;
+    min-height: 72vh;
+}
+
+aside {
+    width: 25vw;
+    min-height: 70vh;
+    margin: 2em;
+}
+
+#estabelecimentos {
+    width: 75vw;
+    height: 70vh;
+    margin: 2em;
+    background-color: rgb(64, 137, 200);
 }

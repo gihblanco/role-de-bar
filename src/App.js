@@ -39,8 +39,8 @@ function AppContent({ isLogged, setIsLogged }) {
         <Route path="/cadastroConsumidor" element={<CadastroConsumidor setIsLogged={setIsLogged} />} />
         <Route path="/cadastroProprietario" element={<CadastroProprietario setIsLogged={setIsLogged}/>} />
         <Route path="/login" element={<Login setIsLogged={setIsLogged} />} />
-        <Route path="/estabelecimentos/:tipo" element={<Estabelecimentos setIsLogged={setIsLogged} />} />
-        <Route path="/cadastroEstabelecimento/:tipo" element={<CadastroEstabelecimento setIsLogged={setIsLogged} />} />
+        <Route path="/estabelecimentos" element={<Estabelecimentos setIsLogged={setIsLogged} />} />
+        <Route path="/cadastroEstabelecimento" element={<CadastroEstabelecimento setIsLogged={setIsLogged} />} />
       </Routes>
       <Footer />
     </div>

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField, StepConnector, setRef } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import InputTexto from "../../form/InputTexto";
+import LabelTexto from "../../form/LabelTexto";
 
 
 function Login({ setIsLogged }) {
@@ -59,16 +60,20 @@ function Login({ setIsLogged }) {
 
     const login = (e) => {
         e.preventDefault();
-        const resultado = verificaDadosLogin(email, senha)
+        const resultado = verificaDadosLogin(email, senha);
 
         if (resultado) {
             localStorage.setItem("isLogged", "true");
-            setIsLogged(true);
-            navigate(`/estabelecimentos/${resultado.tipo}`)
+            const usuarioComTipo = { ...resultado.usuario, tipo: resultado.tipo };
+            localStorage.setItem("usuarioLogado", JSON.stringify(usuarioComTipo));
+            navigate("/estabelecimentos", {
+                state: { usuario: usuarioComTipo }
+            });
         } else {
             alert('Email ou senha inválidos');
         }
-    }
+    };
+
 
     return (
         <main className="main_login">
@@ -80,11 +85,11 @@ function Login({ setIsLogged }) {
                 <article className="artigo_form">
                     <form className="form_login" onSubmit={login}>
                         <div className="div-email">
-                            <label for="email">E-mail:</label><br/>
+                            <LabelTexto for="email" textoLabel="Email:" /><br />
                             <InputTexto type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                         </div>
                         <div className="div-senha">
-                            <label for="senha">Senha:</label><br/>
+                            <LabelTexto for="senha" textoLabel="Senha" /><br />
                             <InputTexto type="password" id="senha" name="senha" value={senha} onChange={(e) => setSenha(e.target.value)} required />
                         </div>
                         <button type="submit">Entrar</button>
