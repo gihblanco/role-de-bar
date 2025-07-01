@@ -12,7 +12,7 @@ function CardEstabelecimentos({ estabelecimentos }) {
           />
           <div className="info-card">
             <h2>{estab.nome}</h2>
-            <p>{`${estab.rua}, ${estab.numero} - ${estab.bairro}`}</p>
+            <p>{`${estab.rua}, ${estab.numero}, - ${estab.bairro}`}</p>
             <p className="tag-musica">🎵 {estab.estiloMusical}</p>
             <p className="tag-comodidades">{estab.comodidades.join(', ')}</p>
             <button className="botao-vermais">Ver mais</button>

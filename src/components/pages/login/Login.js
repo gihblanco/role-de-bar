@@ -80,7 +80,7 @@ function Login({ setIsLogged }) {
             <section className="section_login">
                 <article className="artigo_login">
                     <h3>Seja bem-vindo(a)!</h3>
-                    <p>Bôra descobrir novos bares?</p>
+                    <p>Bora descobrir novos bares?</p>
                 </article>
                 <article className="artigo_form">
                     <form className="form_login" onSubmit={login}>

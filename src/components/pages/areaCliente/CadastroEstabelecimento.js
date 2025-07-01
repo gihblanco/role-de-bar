@@ -3,7 +3,7 @@ import './CadastroEstabelecimento.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import CloseIcon from '@mui/icons-material/Close';
-import CheckboxComodidades from '../../form/CheckboxComodidades';
+import Comodidades from '../../form/Comodidades';
 import SelectTipoEstabelecimento from '../../form/SelectTipoEstabelecimento';
 import SelectEstiloMusical from '../../form/SelectEstiloMusical';
 import LabelTexto from '../../form/LabelTexto';
@@ -135,7 +135,7 @@ function CadastroEstabelecimento() {
 
               <SelectTipoEstabelecimento value={tipoEstabelecimento} onChange={setTipoEstabelecimento} />
               <SelectEstiloMusical value={estiloMusical} onChange={setEstiloMusical} />
-              <CheckboxComodidades value={comodidades} onChange={setComodidades} />
+              <Comodidades value={comodidades} onChange={setComodidades} />
 
               <LabelTexto for="cep" textoLabel="CEP:" />
               <InputTexto

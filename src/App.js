@@ -16,7 +16,7 @@ import CadastroConsumidor from "./components/pages/cadastros/CadastroConsumidor"
 import CadastroProprietario from "./components/pages/cadastros/CadastroProprietario"
 import Estabelecimentos from "./components/pages/areaCliente/Estabelecimentos"
 import CadastroEstabelecimento from "./components/pages/areaCliente/CadastroEstabelecimento"
-
+import PerfilUsuario from "./components/pages/areaCliente/PerfilUsuario"
 
 function AppContent({ isLogged, setIsLogged }) {
   const location = useLocation();
@@ -32,25 +32,26 @@ function AppContent({ isLogged, setIsLogged }) {
       {!isLogged && !estaEmPaginaInterna && <Header />}
 
       <Routes>
-        <Route path="/" element={<Home setIsLogged={setIsLogged}/>} />
-        <Route path="/sobre" element={<Sobre setIsLogged={setIsLogged}/>} />
-        <Route path="/servicos" element={<Servicos setIsLogged={setIsLogged}/>} />
-        <Route path="/contato" element={<Contato setIsLogged={setIsLogged}/>} />
+        <Route path="/" element={<Home setIsLogged={setIsLogged} />} />
+        <Route path="/sobre" element={<Sobre setIsLogged={setIsLogged} />} />
+        <Route path="/servicos" element={<Servicos setIsLogged={setIsLogged} />} />
+        <Route path="/contato" element={<Contato setIsLogged={setIsLogged} />} />
         <Route path="/cadastroConsumidor" element={<CadastroConsumidor setIsLogged={setIsLogged} />} />
-        <Route path="/cadastroProprietario" element={<CadastroProprietario setIsLogged={setIsLogged}/>} />
+        <Route path="/cadastroProprietario" element={<CadastroProprietario setIsLogged={setIsLogged} />} />
         <Route path="/login" element={<Login setIsLogged={setIsLogged} />} />
         <Route path="/estabelecimentos" element={<Estabelecimentos setIsLogged={setIsLogged} />} />
         <Route path="/cadastroEstabelecimento" element={<CadastroEstabelecimento setIsLogged={setIsLogged} />} />
+        <Route path="/perfilUsuario" element={<PerfilUsuario setIsLogged={setIsLogged} />} />
       </Routes>
       <Footer />
     </div>
-  ); 
+  );
 }
 
 function App() {
   const [isLogged, setIsLogged] = useState(() => {
-      return localStorage.getItem('isLogged') === 'true';
-    });
+    return localStorage.getItem('isLogged') === 'true';
+  });
 
 
   return (

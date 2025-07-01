@@ -6,10 +6,11 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import CheckboxComodidades from '../../form/CheckboxComodidades';
+import Comodidades from '../../form/Comodidades';
 import SelectEstiloMusical from '../../form/SelectEstiloMusical';
 import SelectTipoEstabelecimento from '../../form/SelectTipoEstabelecimento';
 import CardEstabelecimentos from '../../estabelecimentos/CardEstabelecimento';
+import Cardapio from '../../form/Cardapio';
 
 function Estabelecimentos({ setIsLogged }) {
   const location = useLocation();
@@ -19,6 +20,7 @@ function Estabelecimentos({ setIsLogged }) {
   const [tipoSelecionado, setTipoSelecionado] = useState("");
   const [estiloSelecionado, setEstiloSelecionado] = useState("");
   const [comodidadesSelecionadas, setComodidadesSelecionadas] = useState([]);
+  const [cardapioSelecionadas, setCardapioSelecionadas] = useState([]);
   const [estabelecimentos, setEstabelecimentos] = useState([]);
 
   useEffect(() => {
@@ -42,6 +44,9 @@ function Estabelecimentos({ setIsLogged }) {
       const comodidadesOk = comodidadesSelecionadas.length > 0
         ? comodidadesSelecionadas.every(comod => estab.comodidades.includes(comod))
         : true;
+      const cardapioOk = cardapioSelecionadas.length > 0
+        ? cardapioSelecionadas.every(cardapio => estab.cardapio.includes(cardapio))
+        : true;
 
       return tipoOk && estiloOk && comodidadesOk;
     });
@@ -49,13 +54,17 @@ function Estabelecimentos({ setIsLogged }) {
     setEstabelecimentos(filtrados);
   };
 
+  function redirecionar() {
+    navigate("/PerfilUsuario", { state: { usuario } });
+  }
+
   return (
     <main className='main_estabelecimentos'>
       <div className='header_estabelecimentos'>
         <Logo className='logo' />
         <input placeholder='Buscar bares' className='search-bar' />
         <nav className='menuIcones'>
-          <button title='Perfil'><PersonOutlineIcon className='perfil' /></button>
+          <button title='Perfil'><PersonOutlineIcon className='perfil' onClick={redirecionar} /></button>
           <button title='Favoritos'><FavoriteBorderIcon className='favoritos' /></button>
           {usuario?.tipo === 'proprietario' && (
             <Link to="/cadastroEstabelecimento" state={{ usuario }}>
@@ -69,7 +78,8 @@ function Estabelecimentos({ setIsLogged }) {
       <div className='conteudo'>
         <aside className='filtros'>
           <h3>Filtros</h3>
-          <CheckboxComodidades value={comodidadesSelecionadas} onChange={setComodidadesSelecionadas} />
+          <Cardapio value={cardapioSelecionadas} onChange={setCardapioSelecionadas} />
+          <Comodidades value={comodidadesSelecionadas} onChange={setComodidadesSelecionadas} />
           <SelectEstiloMusical value={estiloSelecionado} onChange={setEstiloSelecionado} />
           <SelectTipoEstabelecimento value={tipoSelecionado} onChange={setTipoSelecionado} />
           <button type='button' onClick={aplicarFiltros}>Aplicar filtros</button>
