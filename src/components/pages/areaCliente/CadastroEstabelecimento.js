@@ -9,6 +9,43 @@ import LabelTexto from '../../form/LabelTexto';
 import InputTexto from '../../form/InputTexto';
 import CardEstabelecimentos from '../../estabelecimentos/CardEstabelecimento';
 
+function redimensionarImagem(file, maxWidth = 800, quality = 0.7) {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+      const img = new Image();
+
+      img.onload = function () {
+        const canvas = document.createElement('canvas');
+        let width = img.width;
+        let height = img.height;
+
+        // Reduz proporcionalmente
+        if (width > maxWidth) {
+          height *= maxWidth / width;
+          width = maxWidth;
+        }
+
+        canvas.width = width;
+        canvas.height = height;
+
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+
+        // Gera base64 com qualidade ajustada (JPEG recomendado)
+        const dataUrl = canvas.toDataURL('image/jpeg', quality);
+        resolve(dataUrl);
+      };
+
+      img.src = event.target.result;
+    };
+
+    reader.readAsDataURL(file);
+  });
+}
+
+
 function CadastroEstabelecimento({ setIsLogged, usuarioLogado }) {
 
   const usuario = usuarioLogado;
@@ -75,13 +112,18 @@ function CadastroEstabelecimento({ setIsLogged, usuarioLogado }) {
     }
   };
 
-  const handleFileChange = (e) => {
+  const handleFileChange = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
-    const reader = new FileReader();
-    reader.onloadend = () => setFoto(reader.result);
-    reader.readAsDataURL(file);
+
+    try {
+      const imagemReduzida = await redimensionarImagem(file);
+      setFoto(imagemReduzida);
+    } catch (error) {
+      alert("Erro ao processar a imagem.");
+    }
   };
+
 
   const cadastrarBar = (e) => {
     e.preventDefault();
@@ -137,7 +179,7 @@ function CadastroEstabelecimento({ setIsLogged, usuarioLogado }) {
         <h1>Estabelecimentos registrados</h1>
         <p>Número total de estabelecimentos: {meusEstabelecimentos.length}</p>
         <article>
-          <CardEstabelecimentos estabelecimentos={meusEstabelecimentos}/>
+          <CardEstabelecimentos estabelecimentos={meusEstabelecimentos} />
         </article>
 
       </section>
@@ -155,36 +197,36 @@ function CadastroEstabelecimento({ setIsLogged, usuarioLogado }) {
               <LabelTexto for="nome" textoLabel="Nome:" className="form-label" />
               <InputTexto className="form-input" id="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
 
-              <SelectTipoEstabelecimento value={tipoEstabelecimento} onChange={setTipoEstabelecimento} required/>
-              <SelectEstiloMusical value={estiloMusical} onChange={setEstiloMusical} required/>
+              <SelectTipoEstabelecimento value={tipoEstabelecimento} onChange={setTipoEstabelecimento} required />
+              <SelectEstiloMusical value={estiloMusical} onChange={setEstiloMusical} required />
               <Comodidades value={comodidades} onChange={setComodidades} />
 
-              <LabelTexto for="cep" textoLabel="CEP:" className="form-label"/>
-              <InputTexto className="form-input" id="cep" value={cep} onChange={(e) => setCep(e.target.value)} onBlur={() => buscarCep(cep)} required/>
+              <LabelTexto for="cep" textoLabel="CEP:" className="form-label" />
+              <InputTexto className="form-input" id="cep" value={cep} onChange={(e) => setCep(e.target.value)} onBlur={() => buscarCep(cep)} required />
 
-              <LabelTexto for="rua" textoLabel="Rua:" className="form-label"/>
-              <InputTexto className="form-input" id="rua" value={rua} onChange={(e) => setRua(e.target.value)} required/>
+              <LabelTexto for="rua" textoLabel="Rua:" className="form-label" />
+              <InputTexto className="form-input" id="rua" value={rua} onChange={(e) => setRua(e.target.value)} required />
 
-              <LabelTexto for="numero" textoLabel="Número:" className="form-label"/>
-              <InputTexto className="form-input" id="numero" value={numero} onChange={(e) => setNumero(e.target.value)} required/>
+              <LabelTexto for="numero" textoLabel="Número:" className="form-label" />
+              <InputTexto className="form-input" id="numero" value={numero} onChange={(e) => setNumero(e.target.value)} required />
 
-              <LabelTexto for="complemento" textoLabel="Complemento:" className="form-label"/>
-              <InputTexto className="form-input" id="complemento" value={complemento} onChange={(e) => setComplemento(e.target.value)} required/>
+              <LabelTexto for="complemento" textoLabel="Complemento:" className="form-label" />
+              <InputTexto className="form-input" id="complemento" value={complemento} onChange={(e) => setComplemento(e.target.value)} required />
 
-              <LabelTexto for="bairro" textoLabel="Bairro:" className="form-label"/>
-              <InputTexto className="form-input" id="bairro" value={bairro} onChange={(e) => setBairro(e.target.value)} required/>
+              <LabelTexto for="bairro" textoLabel="Bairro:" className="form-label" />
+              <InputTexto className="form-input" id="bairro" value={bairro} onChange={(e) => setBairro(e.target.value)} required />
 
-              <LabelTexto for="cidade" textoLabel="Cidade:" className="form-label"/>
-              <InputTexto className="form-input" id="cidade" value={cidade} onChange={(e) => setCidade(e.target.value)} required/>
+              <LabelTexto for="cidade" textoLabel="Cidade:" className="form-label" />
+              <InputTexto className="form-input" id="cidade" value={cidade} onChange={(e) => setCidade(e.target.value)} required />
 
-              <LabelTexto for="estado" textoLabel="Estado:" className="form-label"/>
-              <InputTexto className="form-input"id="estado" value={estado} onChange={(e) => setEstado(e.target.value)} required/>
+              <LabelTexto for="estado" textoLabel="Estado:" className="form-label" />
+              <InputTexto className="form-input" id="estado" value={estado} onChange={(e) => setEstado(e.target.value)} required />
 
-              <LabelTexto for="descricao" textoLabel="Descrição:" className="form-label"/>
-              <textarea id="descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} required/>
+              <LabelTexto for="descricao" textoLabel="Descrição:" className="form-label" />
+              <textarea id="descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} required />
 
-              <LabelTexto for="foto" textoLabel="Adicione uma foto do local:" className="form-label"/>
-              <InputTexto className="form-input" id="foto" type="file" accept="image/*" onChange={handleFileChange} required/>
+              <LabelTexto for="foto" textoLabel="Adicione uma foto do local:" className="form-label" />
+              <InputTexto className="form-input" id="foto" type="file" accept="image/*" onChange={handleFileChange} required />
 
               <button type="submit">Cadastrar</button>
             </form>
