@@ -42,3 +42,31 @@
 .listaHeader a:hover {
     color: rgb(192, 122, 10);
 }
+
+.botoesMenu {
+    display: flex;
+    width: 60%;
+}
+
+.search-bar {
+    width: 40%;
+    height: 2.4em;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+}
+
+.menuIcones {
+    display: flex;
+    width: 30%;
+    height: 2.4em;
+    justify-content: space-between;
+}
+
+.perfil, .favoritos, .meus_estabelecimentos, .sair {
+    color: white;
+}
+
+.perfil:hover, .favoritos:hover, .meus_estabelecimentos:hover, .sair:hover {
+    color: rgb(192, 122, 10);
+}

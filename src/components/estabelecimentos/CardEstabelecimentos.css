@@ -3,19 +3,27 @@
 .lista-estabelecimentos {
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  padding: 1.5em;
+  gap: 1.2em;
   font-family: 'Fredoka', sans-serif;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  padding: 0; /* REMOVIDO para evitar espaço no topo */
+  align-items: flex-start; /* Garante que fique no topo */
 }
 
 .card-horizontal {
+  width: 100%;
+  min-height: 140px;
   display: flex;
-  background-color: #fff4c2; /* amarelo mais claro */
+  align-items: stretch;
+  background-color: #fff8e1;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s ease;
-  height: 140px;
 }
 
 .card-horizontal:hover {
@@ -24,12 +32,13 @@
 
 .imagem-card {
   width: 140px;
-  height: 100%;
+  height: 140px; /* altura fixa */
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .info-card {
-  padding: 0.8em 1em;
+  padding: 1em;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -38,35 +47,45 @@
 
 .info-card h2 {
   color: #f66e06;
-  font-size: 1.1em;
+  font-size: 1.2em;
   margin: 0;
 }
 
 .info-card p {
-  margin: 0.2em 0;
-  font-size: 0.85em;
-  color: #333;
+  margin: 0.3em 0;
+  font-size: 0.9em;
+  color: #444;
 }
 
 .tag-musica,
 .tag-comodidades {
-  font-size: 0.75em;
-  color: #555;
+  font-size: 0.8em;
+  color: #666;
 }
 
 .botao-vermais {
   align-self: flex-start;
-  margin-top: 0.3em;
-  padding: 0.3em 0.8em;
+  margin-top: 0.5em;
+  padding: 0.4em 1em;
   background-color: #f66e06;
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 0.8em;
+  font-size: 0.85em;
   cursor: pointer;
   font-family: 'Fredoka', sans-serif;
+  transition: background-color 0.3s ease;
 }
 
 .botao-vermais:hover {
   background-color: #f8a60d;
 }
+
+.mensagem-vazia {
+  width: 100%;
+  text-align: center;
+  color: #888;
+  font-size: 1.1em;
+  padding: 2em 0;
+}
+

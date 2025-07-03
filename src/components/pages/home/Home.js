@@ -3,7 +3,7 @@ import Letreiro from "../../img/Letreiro";
 import { useState } from "react";
 import SelectBairro from "../../form/SelectBairro";
 
-function Home({ setIsLogged }) {
+function Home({ setIsLogged, usuarioLogado }) {
 
     localStorage.setItem("isLogged", "false");
     setIsLogged(false)

@@ -1,33 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
 .main_estabelecimentos {
-    min-height: 92vh;
-}
-
-.logo {
-    width: 8vw;
-}
-
-.header_estabelecimentos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20vh;
-    width: 100vw;
+  min-height: 92vh;
+  font-family: 'Fredoka', sans-serif;
+  padding: 1em;
+  background-color: #fff;
 }
 
 .conteudo {
-    display: flex;
-    width: 100vw;
-    min-height: 72vh;
+  display: flex;
+  width: 100%;
+  gap: 2em;
 }
 
-aside {
-    width: 25vw;
-    min-height: 70vh;
-    margin: 2em;
+.filtros {
+  width: 25%;
+  background-color: #fef8f4;
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.filtros h3 {
+  color: #f66e06;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.filtro-label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.2em;
+  display: block;
+  text-align: left;
+  font-size: 1em;
+}
+
+.filtro-input {
+  width: 100%;
+  padding: 0.6em;
+  border: 1px solid #f9a260;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: 'Fredoka', sans-serif;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.filtros button {
+  margin-top: 1em;
+  background-color: #f66e06;
+  color: white;
+  border: none;
+  padding: 0.8em;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Fredoka', serif;
+}
+
+.filtros button:hover {
+  background-color: #e05d00;
 }
 
 #estabelecimentos {
-    width: 75vw;
-    height: 70vh;
-    margin: 2em;
+  width: 75%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* novo */
+}
+
+.filtro-estilo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+.filtro-estilo,
+.filtro-categoria {
+  background-color: #fffdfb;
+}
+
+@media (max-width: 768px) {
+  .conteudo {
+    flex-direction: column;
+  }
+
+  .filtros,
+  #estabelecimentos {
+    width: 100%;
+  }
 }

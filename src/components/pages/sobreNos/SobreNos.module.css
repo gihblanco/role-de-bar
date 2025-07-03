@@ -46,7 +46,7 @@
 }
 
 .divUmobjetivo {
-    background-color: rgb(250, 250, 154);
+    background-color: #fadc83;
     width: 40vw;
     height: 70vh;
 }
@@ -71,7 +71,7 @@
 .divAniversario {
     width: 100%;
     display: flex;
-    background-color: #dca7f1;
+    background-color: #f8a60d;
 }
 
 .divAniversario p{
@@ -86,7 +86,7 @@
 .divJogo {
     width: 100%;
     display: flex;
-    background-color: rgb(206, 245, 147);
+    background-color: #f66e06c6;
 }
 
 .divJogo p {
@@ -128,7 +128,7 @@
 .sobreEliza {
     height: 50vh;
     width: 20vw;
-    background-color: #b9f0d7;
+    background-color: #f87f5a;
     border-top-left-radius: 20em;
     border-top-right-radius: 20em;
     display: flex;
@@ -154,7 +154,7 @@
 .sobreGiulia {
     height: 45vh;
     width: 20vw;
-    background-color: #c9e8ff;
+    background-color: #fcbb41;
     margin-top: 5vh;
     border-top-left-radius: 20em;
     border-top-right-radius: 20em;
@@ -181,7 +181,7 @@
 .sobreMonica {
     height: 50vh;
     width: 20vw;
-    background-color: #b8baff;
+    background-color: #fb842a;
     border-top-left-radius: 20em;
     border-top-right-radius: 20em;
     display: flex;
@@ -207,7 +207,7 @@
 .sobreTony {
     height: 45vh;
     width: 20vw;
-    background-color: #6666ff;
+    background-color: #f8d15d;
     margin-top: 5vh;
     border-top-left-radius: 20em;
     border-top-right-radius: 20em;

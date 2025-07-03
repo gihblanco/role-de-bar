@@ -1,6 +1,47 @@
-.cadastro_estabelecimentos {
-    width: 100vw;
-    min-height: 92vh;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+.cadastro_meus_estabelecimentos {
+  width: 85vw;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 2em rgba(0, 0, 0, 0.3);
+  padding: 1em;
+  font-family: 'Fredoka', serif;
+}
+
+.cabecalho_meus_estabelecimentos {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.cabecalho_meus_estabelecimentos button {
+  height: 2.2em;
+  width: 30%;
+  border-radius: 4px;
+  border: #f9a260 1px solid;
+  background-color: #f66e06;
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+  font-size: large;
+  cursor: pointer;
+}
+
+.estabelecimentos_registrados {
+  width: 100%;
+  min-height: 72vh;
+}
+
+.estabelecimentos_registrados h1 {
+  color: #f66e06;
+  margin-bottom: 0.5em;
+}
+
+.estabelecimentos_registrados p {
+  font-size: large;
 }
 
 .modal-overlay {
@@ -17,15 +58,102 @@
 }
 
 .modal-content {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  width: 600px;
-  min-height: 70vh;
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
   overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   position: relative;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  font-family: 'Fredoka', sans-serif;
 }
+
+.form-bar {
+  width: 100%;
+  max-width: 600px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-bar h3 {
+  text-align: center;
+  color: #f66e06;
+  font-size: 2em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.form-bar .form-label {
+  font-size: large;
+  display: block;
+  color: black;
+  text-align: left;
+  width: 100%;
+}
+
+.form-bar .form-input {
+  width: 100%;
+  padding: 0.6em;
+  border: 1px solid #f9a260;
+  border-radius: 4px;
+  font-size: 1em;
+  font-family: 'Fredoka', sans-serif;
+  box-sizing: border-box;
+  color: #333;
+  margin-bottom: 1em;
+}
+
+.form-bar select {
+  width: 100%;
+  padding: 0.6em;
+  border: 1px solid #f9a260;
+  border-radius: 4px;
+  font-size: 1em;
+  font-family: 'Fredoka', sans-serif;
+  box-sizing: border-box;
+  color: #333;
+  margin-bottom: 1em;
+}
+
+.form-bar textarea {
+  width: 100%;
+  padding: 0.6em;
+  border: 1px solid #f9a260;
+  border-radius: 4px;
+  font-size: 1em;
+  font-family: 'Fredoka', sans-serif;
+  box-sizing: border-box;
+  color: #333;
+  margin-bottom: 1em;
+}
+
+
+.form-bar textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-bar button[type="submit"] {
+  width: 100%;
+  height: 2.2em;
+  border-radius: 4px;
+  border: #f9a260 1px solid;
+  background-color: #f66e06;
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+  font-size: large;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-bar button[type="submit"]:hover {
+  background-color: #f8a60d;
+}
+
 
 .fechar-modal {
   position: absolute;
@@ -33,8 +161,7 @@
   right: 10px;
   background: transparent;
   border: none;
-  font-size: 24px;
+  font-size: 1.5em;
   color: #333;
   cursor: pointer;
 }
-

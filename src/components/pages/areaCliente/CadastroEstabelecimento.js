@@ -1,22 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './CadastroEstabelecimento.css';
-import { useLocation, useNavigate } from 'react-router-dom';
-import AddBoxIcon from '@mui/icons-material/AddBox';
+import { useNavigate } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import Comodidades from '../../form/Comodidades';
 import SelectTipoEstabelecimento from '../../form/SelectTipoEstabelecimento';
 import SelectEstiloMusical from '../../form/SelectEstiloMusical';
 import LabelTexto from '../../form/LabelTexto';
 import InputTexto from '../../form/InputTexto';
+import CardEstabelecimentos from '../../estabelecimentos/CardEstabelecimento';
 
-function CadastroEstabelecimento() {
-  const location = useLocation();
+function CadastroEstabelecimento({ setIsLogged, usuarioLogado }) {
+
+  const usuario = usuarioLogado;
   const navigate = useNavigate();
+  const [meusEstabelecimentos, setMeusEstabelecimentos] = useState([]);
 
-  const usuario = location.state?.usuario || JSON.parse(localStorage.getItem("usuarioLogado"));
+
+  useEffect(() => {
+    if (!usuario) {
+      setIsLogged(false);
+      localStorage.setItem("isLogged", "false");
+      navigate('/');
+    } else {
+      setIsLogged(true);
+      localStorage.setItem("isLogged", "true");
+
+      // Verifica se o usuário já tem estabelecimentos cadastrados
+      const estabelecimentos = JSON.parse(localStorage.getItem('estabelecimentos')) || [];
+      const meus = estabelecimentos.filter(estab => estab.idProprietario === usuario.id);
+      console.log(meus)
+      setMeusEstabelecimentos(meus);
+    }
+  }, []);
+
+
 
   const voltar = () => {
-    navigate("/estabelecimentos", { state: { usuario } });
+    navigate("/estabelecimentos");
   };
 
   const [mostrarModal, setMostrarModal] = useState(false);
@@ -80,7 +100,7 @@ function CadastroEstabelecimento() {
       estado,
       descricao,
       foto,
-      emailProprietario: usuario.email,
+      idProprietario: usuario.id,
     };
 
     const estabelecimentosSalvos = JSON.parse(localStorage.getItem('estabelecimentos')) || [];
@@ -107,17 +127,19 @@ function CadastroEstabelecimento() {
   };
 
   return (
-    <main className="cadastro_estabelecimentos">
-      <div>
+    <main className="cadastro_meus_estabelecimentos">
+      <div className="cabecalho_meus_estabelecimentos">
         <button onClick={voltar} className="voltar_estabelecimentos">Voltar</button>
-        <button onClick={() => setMostrarModal(true)}>
-          <AddBoxIcon className="cadastrar_estabelecimento" />
-        </button>
+        <button className="btn-add" onClick={() => setMostrarModal(true)}>Adicionar estabelecimento</button>
       </div>
 
-      <section>
-        <h2>Estabelecimentos registrados</h2>
-        <p>Número total de estabelecimentos:</p>
+      <section className="estabelecimentos_registrados">
+        <h1>Estabelecimentos registrados</h1>
+        <p>Número total de estabelecimentos: {meusEstabelecimentos.length}</p>
+        <article>
+          <CardEstabelecimentos estabelecimentos={meusEstabelecimentos}/>
+        </article>
+
       </section>
 
       {mostrarModal && (
@@ -130,45 +152,39 @@ function CadastroEstabelecimento() {
             <form className="form-bar" onSubmit={cadastrarBar}>
               <h3>Cadastro de estabelecimento</h3>
 
-              <LabelTexto for="nome" textoLabel="Nome:" />
-              <InputTexto id="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
+              <LabelTexto for="nome" textoLabel="Nome:" className="form-label" />
+              <InputTexto className="form-input" id="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
 
-              <SelectTipoEstabelecimento value={tipoEstabelecimento} onChange={setTipoEstabelecimento} />
-              <SelectEstiloMusical value={estiloMusical} onChange={setEstiloMusical} />
+              <SelectTipoEstabelecimento value={tipoEstabelecimento} onChange={setTipoEstabelecimento} required/>
+              <SelectEstiloMusical value={estiloMusical} onChange={setEstiloMusical} required/>
               <Comodidades value={comodidades} onChange={setComodidades} />
 
-              <LabelTexto for="cep" textoLabel="CEP:" />
-              <InputTexto
-                id="cep"
-                value={cep}
-                onChange={(e) => setCep(e.target.value)}
-                onBlur={() => buscarCep(cep)}
-                required
-              />
+              <LabelTexto for="cep" textoLabel="CEP:" className="form-label"/>
+              <InputTexto className="form-input" id="cep" value={cep} onChange={(e) => setCep(e.target.value)} onBlur={() => buscarCep(cep)} required/>
 
-              <LabelTexto for="rua" textoLabel="Rua:" />
-              <InputTexto id="rua" value={rua} onChange={(e) => setRua(e.target.value)} />
+              <LabelTexto for="rua" textoLabel="Rua:" className="form-label"/>
+              <InputTexto className="form-input" id="rua" value={rua} onChange={(e) => setRua(e.target.value)} required/>
 
-              <LabelTexto for="numero" textoLabel="Número:" />
-              <InputTexto id="numero" value={numero} onChange={(e) => setNumero(e.target.value)} />
+              <LabelTexto for="numero" textoLabel="Número:" className="form-label"/>
+              <InputTexto className="form-input" id="numero" value={numero} onChange={(e) => setNumero(e.target.value)} required/>
 
-              <LabelTexto for="complemento" textoLabel="Complemento:" />
-              <InputTexto id="complemento" value={complemento} onChange={(e) => setComplemento(e.target.value)} />
+              <LabelTexto for="complemento" textoLabel="Complemento:" className="form-label"/>
+              <InputTexto className="form-input" id="complemento" value={complemento} onChange={(e) => setComplemento(e.target.value)} required/>
 
-              <LabelTexto for="bairro" textoLabel="Bairro:" />
-              <InputTexto id="bairro" value={bairro} onChange={(e) => setBairro(e.target.value)} />
+              <LabelTexto for="bairro" textoLabel="Bairro:" className="form-label"/>
+              <InputTexto className="form-input" id="bairro" value={bairro} onChange={(e) => setBairro(e.target.value)} required/>
 
-              <LabelTexto for="cidade" textoLabel="Cidade:" />
-              <InputTexto id="cidade" value={cidade} onChange={(e) => setCidade(e.target.value)} />
+              <LabelTexto for="cidade" textoLabel="Cidade:" className="form-label"/>
+              <InputTexto className="form-input" id="cidade" value={cidade} onChange={(e) => setCidade(e.target.value)} required/>
 
-              <LabelTexto for="estado" textoLabel="Estado:" />
-              <InputTexto id="estado" value={estado} onChange={(e) => setEstado(e.target.value)} />
+              <LabelTexto for="estado" textoLabel="Estado:" className="form-label"/>
+              <InputTexto className="form-input"id="estado" value={estado} onChange={(e) => setEstado(e.target.value)} required/>
 
-              <LabelTexto for="descricao" textoLabel="Descrição:" />
-              <textarea id="descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} />
+              <LabelTexto for="descricao" textoLabel="Descrição:" className="form-label"/>
+              <textarea id="descricao" value={descricao} onChange={(e) => setDescricao(e.target.value)} required/>
 
-              <LabelTexto for="foto" textoLabel="Adicione uma foto do local:" />
-              <InputTexto id="foto" type="file" accept="image/*" onChange={handleFileChange} />
+              <LabelTexto for="foto" textoLabel="Adicione uma foto do local:" className="form-label"/>
+              <InputTexto className="form-input" id="foto" type="file" accept="image/*" onChange={handleFileChange} required/>
 
               <button type="submit">Cadastrar</button>
             </form>

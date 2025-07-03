@@ -1,0 +1,19 @@
+.comodidades-wrapper {
+  width: 100%;
+}
+
+.comodidades-wrapper p {
+    margin: 0.5em;
+    font-size: large;
+}
+
+area-texto {
+  width: 100%;
+  padding: 0.6em;
+  border: 1px solid #f9a260;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: 'Fredoka', sans-serif;
+  resize: vertical;
+  box-sizing: border-box;
+}

@@ -6,7 +6,7 @@ import InputTexto from "../../form/InputTexto";
 import LabelTexto from "../../form/LabelTexto";
 
 
-function Login({ setIsLogged }) {
+function Login({ setIsLogged, setUsuarioLogado }) {
 
     useEffect(() => {
         localStorage.setItem("isLogged", "false");
@@ -63,13 +63,19 @@ function Login({ setIsLogged }) {
         const resultado = verificaDadosLogin(email, senha);
 
         if (resultado) {
-            localStorage.setItem("isLogged", "true");
             const usuarioComTipo = { ...resultado.usuario, tipo: resultado.tipo };
+
+            localStorage.setItem("isLogged", "true");
             localStorage.setItem("usuarioLogado", JSON.stringify(usuarioComTipo));
+
+            setIsLogged(true);
+            setUsuarioLogado(usuarioComTipo);
+
             navigate("/estabelecimentos", {
                 state: { usuario: usuarioComTipo }
             });
-        } else {
+        }
+        else {
             alert('Email ou senha inválidos');
         }
     };

@@ -1,22 +1,34 @@
-import "./Header.css"
-import Logo from "../img/Logo"
-import { NavLink } from "react-router-dom"
+import "./Header.css";
+import Logo from "../img/Logo";
+import Menu from "./Menu";
+import { useNavigate } from "react-router-dom";
+import BotoesMenu from "./BotoesMenu";
 
-function Header() {
+
+function Header({ isLogged, usuarioLogado }) {
+    const navigate = useNavigate();
+    const usuario = usuarioLogado;
+
+    const logout = () => {
+        localStorage.setItem("isLogged", "false");
+        localStorage.removeItem("usuarioLogado");
+        navigate("/");
+        window.location.reload();
+    };
 
     return (
         <header className="header">
-            <Logo className="logoApp"/>
-            <nav className="navBar">
-                <ul className="listaHeader">
-                    <li><NavLink to="/servicos" className="linkServicos">Serviços</NavLink></li>
-                    <li><NavLink to="/sobre" className="linkSobre">Sobre nós</NavLink></li>
-                    <li><NavLink to="/contato" className="linkContato">Contato</NavLink></li>
-                    <li><NavLink to="/login" className="linkLogin">Log-in</NavLink></li>
-                </ul>
-            </nav>
+            <Logo className="logoApp" />
+
+            {isLogged ? (
+                <>
+                    <BotoesMenu usuario={usuario} logout={logout}/>
+                </>
+            ) : (
+                <Menu />
+            )}
         </header>
-    )
+    );
 }
 
-export default Header
+export default Header;

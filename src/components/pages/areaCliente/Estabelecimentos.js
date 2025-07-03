@@ -4,18 +4,18 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LogoutIcon from '@mui/icons-material/Logout';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Comodidades from '../../form/Comodidades';
 import SelectEstiloMusical from '../../form/SelectEstiloMusical';
 import SelectTipoEstabelecimento from '../../form/SelectTipoEstabelecimento';
 import CardEstabelecimentos from '../../estabelecimentos/CardEstabelecimento';
 import Cardapio from '../../form/Cardapio';
+import Header from '../../layout/Header';
 
-function Estabelecimentos({ setIsLogged }) {
-  const location = useLocation();
+function Estabelecimentos({ setIsLogged, usuarioLogado }) {
   const navigate = useNavigate();
-  const usuario = location.state?.usuario || JSON.parse(localStorage.getItem("usuarioLogado"));
+  const usuario = usuarioLogado;
 
   const [tipoSelecionado, setTipoSelecionado] = useState("");
   const [estiloSelecionado, setEstiloSelecionado] = useState("");
@@ -60,29 +60,31 @@ function Estabelecimentos({ setIsLogged }) {
 
   return (
     <main className='main_estabelecimentos'>
-      <div className='header_estabelecimentos'>
-        <Logo className='logo' />
-        <input placeholder='Buscar bares' className='search-bar' />
-        <nav className='menuIcones'>
-          <button title='Perfil'><PersonOutlineIcon className='perfil' onClick={redirecionar} /></button>
-          <button title='Favoritos'><FavoriteBorderIcon className='favoritos' /></button>
-          {usuario?.tipo === 'proprietario' && (
-            <Link to="/cadastroEstabelecimento" state={{ usuario }}>
-              <button title='Meus estabelecimentos'><HomeWorkIcon className='meus_estabelecimentos' /></button>
-            </Link>
-          )}
-          <button onClick={logout} title='Sair'><LogoutIcon className='sair' /></button>
-        </nav>
-      </div>
-
       <div className='conteudo'>
         <aside className='filtros'>
           <h3>Filtros</h3>
-          <Cardapio value={cardapioSelecionadas} onChange={setCardapioSelecionadas} />
-          <Comodidades value={comodidadesSelecionadas} onChange={setComodidadesSelecionadas} />
-          <SelectEstiloMusical value={estiloSelecionado} onChange={setEstiloSelecionado} />
-          <SelectTipoEstabelecimento value={tipoSelecionado} onChange={setTipoSelecionado} />
-          <button type='button' onClick={aplicarFiltros}>Aplicar filtros</button>
+
+          <label htmlFor="tipo" className="filtro-label">Tipo de bar:</label>
+          <SelectTipoEstabelecimento
+            value={tipoSelecionado}
+            onChange={setTipoSelecionado}
+            className="filtro-input"
+          />
+
+          <label htmlFor="estilo" className="filtro-label">Estilo Musical:</label>
+          <SelectEstiloMusical
+            value={estiloSelecionado}
+            onChange={setEstiloSelecionado}
+            className="filtro-input"
+          />
+
+          <Comodidades
+            value={comodidadesSelecionadas}
+            onChange={setComodidadesSelecionadas}
+          />
+
+          <button type="button" onClick={aplicarFiltros}>Aplicar filtros</button>
+
         </aside>
 
         <section id='estabelecimentos'>
