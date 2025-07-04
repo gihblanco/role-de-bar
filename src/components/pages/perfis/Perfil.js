@@ -35,10 +35,17 @@ function Perfil({ setIsLogged, usuarioLogado }) {
       u.email === usuario.email ? { ...u, nome, email, senha } : u
     );
 
-    const usuarioAtualizado = { ...usuario, nome, email, senha };
+    if (usuario.tipo === "proprietario") {
 
-    localStorage.setItem(chave, JSON.stringify(novaLista));
-    localStorage.setItem("usuarioLogado", JSON.stringify(usuarioAtualizado));
+      const usuarioAtualizado = { ...usuario, nome, cpf, email, senha };
+      localStorage.setItem(chave, JSON.stringify(novaLista));
+      localStorage.setItem("usuarioLogado", JSON.stringify(usuarioAtualizado));
+    } else {
+      const usuarioAtualizado = { ...usuario, nome, email, senha };
+      localStorage.setItem(chave, JSON.stringify(novaLista));
+      localStorage.setItem("usuarioLogado", JSON.stringify(usuarioAtualizado));
+    }
+
     alert("Dados atualizados com sucesso!");
   };
 
@@ -104,10 +111,10 @@ function Perfil({ setIsLogged, usuarioLogado }) {
             </button>
           </div>
         </div>
-      <div className="botoes">
-        <button className="excluir" onClick={excluirConta}>Excluir conta</button>
-        <button className="salvar" onClick={salvarAlteracoes}>Salvar alterações</button>
-      </div>
+        <div className="botoes">
+          <button className="excluir" onClick={excluirConta}>Excluir conta</button>
+          <button className="salvar" onClick={salvarAlteracoes}>Salvar alterações</button>
+        </div>
       </section>
     </main>
   );

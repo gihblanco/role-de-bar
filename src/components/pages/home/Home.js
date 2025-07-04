@@ -1,7 +1,7 @@
 import "./Home.css"
 import Letreiro from "../../img/Letreiro";
 import { useState } from "react";
-import SelectBairro from "../../form/SelectBairro";
+import VerEstabelecimentos from "../../form/VerEstabelecimentos";
 
 function Home({ setIsLogged, usuarioLogado }) {
 
@@ -11,10 +11,10 @@ function Home({ setIsLogged, usuarioLogado }) {
     return (
         <main className="home">
             <section className="sectionHome">
-                <p className="pHome">Seja bem-vindo ao</p>
+                <p className="pHome">Seja bem-vindo(a) ao</p>
                 <Letreiro className="letreiro" />
                 <p className="pHome">De bar em bar, sem perder o caminho!</p>
-                <SelectBairro />
+                <VerEstabelecimentos/>
             </section>
         </main>
     )

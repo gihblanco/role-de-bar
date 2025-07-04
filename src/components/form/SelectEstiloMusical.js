@@ -1,7 +1,3 @@
-const tipoMusica = [
-  "Ao vivo", "Ambiente", "Dj"
-];
-
 const estilosMusicais = [
   "Sertanejo", "Samba/Pagode", "MPB", "Rock", "Pop", "Forró", "Funk",
   "Eletrônica", "Reggae", "Rap", "Jazz", "Blues", "Bossa Nova", "Indie",
@@ -11,17 +7,6 @@ const estilosMusicais = [
 function SelectEstiloMusical({ value, onChange }) {
   return (
     <div className="filtro-estilo-container">
-      <select
-        className="filtro-input filtro-estilo"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-      >
-        <option value="" disabled>Tipo de som</option>
-        {tipoMusica.map((tipo, index) => (
-          <option key={index} value={tipo}>{tipo}</option>
-        ))}
-      </select>
-
       <select
         className="filtro-input filtro-estilo"
         value={value}

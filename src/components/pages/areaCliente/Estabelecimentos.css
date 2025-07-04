@@ -1,98 +1,106 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
 .main_estabelecimentos {
-  min-height: 92vh;
-  font-family: 'Fredoka', sans-serif;
-  padding: 1em;
-  background-color: #fff;
+    min-height: 92vh;
+    font-family: 'Fredoka', sans-serif;
+    padding: 1em;
+    background-color: #fff;
 }
 
 .conteudo {
-  display: flex;
-  width: 100%;
-  gap: 2em;
+    display: flex;
+    width: 100%;
+    gap: 1em;
 }
 
 .filtros {
-  width: 25%;
-  background-color: #fef8f4;
-  padding: 1.5em;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  gap: 1.2em;
+    width: 25%;
+    min-height: 100vh;
+    background-color: #fef8f4;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 .filtros h3 {
-  color: #f66e06;
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
+    color: #f66e06;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
 }
 
 .filtro-label {
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 0.2em;
-  display: block;
-  text-align: left;
-  font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.2em;
+    display: block;
+    text-align: left;
+    font-size: 1em;
 }
 
 .filtro-input {
-  width: 100%;
-  padding: 0.6em;
-  border: 1px solid #f9a260;
-  border-radius: 5px;
-  font-size: 1em;
-  font-family: 'Fredoka', sans-serif;
-  box-sizing: border-box;
-  color: #333;
+    width: 100%;
+    padding: 0.6em;
+    border: 1px solid #f9a260;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Fredoka', sans-serif;
+    box-sizing: border-box;
+    color: #333;
 }
 
-.filtros button {
-  margin-top: 1em;
-  background-color: #f66e06;
-  color: white;
-  border: none;
-  padding: 0.8em;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-family: 'Fredoka', serif;
+.botoes {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.botoes button {
+    border: none;
+    color: #f0f0f0;
+    background-color: #f66e06;
+    font-family: 'Fredoka', serif;
+    border-radius: 4px;
+    border: #f9a260 1px solid;
+    cursor: pointer;
+    min-width: 45%;
 }
 
 .filtros button:hover {
-  background-color: #e05d00;
+    background-color: #e05d00;
 }
 
 #estabelecimentos {
-  width: 75%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* novo */
+    width: 75%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* novo */
+    margin: 0;
+    overflow: auto;
 }
 
 .filtro-estilo-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
 }
 
 .filtro-estilo,
 .filtro-categoria {
-  background-color: #fffdfb;
+    background-color: #fffdfb;
 }
 
 @media (max-width: 768px) {
-  .conteudo {
-    flex-direction: column;
-  }
+    .conteudo {
+        flex-direction: column;
+    }
 
-  .filtros,
-  #estabelecimentos {
-    width: 100%;
-  }
+    .filtros,
+    #estabelecimentos {
+        width: 100%;
+    }
 }

@@ -11,18 +11,18 @@ function BotoesMenu({ usuario, logout }) {
       <InputTexto placeholder="Pesquisar bar 🔎" className="search-bar" />
       <nav className="menuIcones">
         <Link to="/perfil">
-          <PersonOutlineIcon className="perfil" />
+          <PersonOutlineIcon className="perfil" fontSize="large"/>
         </Link>
         <Link to="/favoritos">
-          <FavoriteBorderIcon className="favoritos" />
+          <FavoriteBorderIcon className="favoritos" fontSize="large"/>
         </Link>
         {usuario?.tipo === 'proprietario' && (
           <Link to="/cadastroEstabelecimento">
-            <HomeWorkIcon className="meus_estabelecimentos" />
+            <HomeWorkIcon className="meus_estabelecimentos" fontSize="large"/>
           </Link>
         )}
         <Link>
-          <LogoutIcon className="sair" onClick={logout} />
+          <LogoutIcon className="sair" onClick={logout} fontSize="large"/>
         </Link>
       </nav>
     </div>

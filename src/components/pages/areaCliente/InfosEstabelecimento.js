@@ -1,9 +1,14 @@
-import { useNavigate } from "react-router-dom";
+import './InfosEstabelecimento.css'
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 function InfosEstabelecimento({ setIsLogged, usuarioLogado }) {
     const usuario = usuarioLogado
     const navigate = useNavigate();
+    const { id } = useParams();
+
+    const estabelecimentos = JSON.parse(localStorage.getItem("estabelecimentos")) || [];
+    const estabelecimento = estabelecimentos[id]
 
     useEffect(() => {
         if (!usuario) {
@@ -21,9 +26,19 @@ function InfosEstabelecimento({ setIsLogged, usuarioLogado }) {
     }
 
     return (
-        <main>
-            <button onClick={voltar}>Voltar</button>
-            <p>infos do estabelecimento que vc clicou e se for o seu vc pode editar tbm, lembrar de colocar na listagem o botão de excluir</p>
+        <main className='main-info-estabelecimento'>
+            <div className="header-info-estabelecimento">
+                <button className="voltar" onClick={voltar}>Voltar</button>
+            </div>
+            {usuario.tipo === "consumidor" && (
+                <section className='listagem-dados-estabelecimento'>
+                    <p>Nome estabelecimento: {estabelecimento.nome}</p>
+                </section>
+            )}: {(
+                <section className='listagem-dados-estabelecimento'>
+                    <p>Nome estabelecimento: {estabelecimento.nome}</p>
+                </section>
+            )}
         </main>
     )
 }

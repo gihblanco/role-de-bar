@@ -6,22 +6,21 @@
   gap: 1.2em;
   font-family: 'Fredoka', sans-serif;
   width: 100%;
-  max-width: 1200px;
+  max-width: 75vw;
   margin: 0 auto;
   box-sizing: border-box;
-
-  padding: 0; /* REMOVIDO para evitar espaço no topo */
-  align-items: flex-start; /* Garante que fique no topo */
+  padding: 0;
+  align-items: flex-start;
 }
 
 .card-horizontal {
-  width: 100%;
-  min-height: 140px;
+  width: 95%;
+  min-height: 7vh;
   display: flex;
   align-items: stretch;
   background-color: #fff8e1;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0.8em;
+  box-shadow: 0 0.4em 1.2em rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s ease;
 }
@@ -31,10 +30,14 @@
 }
 
 .imagem-card {
-  width: 140px;
-  height: 140px; /* altura fixa */
+  width: 15vw;
+  height: 100%;
+  max-width: 8em;
+  max-height: 8em;
   object-fit: cover;
   flex-shrink: 0;
+  margin: 0.5em;
+  border-radius: 4px;
 }
 
 .info-card {
@@ -70,7 +73,7 @@
   background-color: #f66e06;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5em;
   font-size: 0.85em;
   cursor: pointer;
   font-family: 'Fredoka', sans-serif;
@@ -88,4 +91,3 @@
   font-size: 1.1em;
   padding: 2em 0;
 }
-
