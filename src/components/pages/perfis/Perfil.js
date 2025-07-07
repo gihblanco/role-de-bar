@@ -77,7 +77,7 @@ function Perfil({ setIsLogged, usuarioLogado }) {
       <div className="header-perfil">
         <button className="voltar" onClick={voltar}>Voltar</button>
       </div>
-      <section className="listagem-perfil">
+      <form className="listagem-perfil" onSubmit={salvarAlteracoes}>
         <h1>Perfil do Usuário</h1>
         <div className="form-group">
           <LabelTexto textoLabel="Nome:" />
@@ -113,9 +113,9 @@ function Perfil({ setIsLogged, usuarioLogado }) {
         </div>
         <div className="botoes">
           <button className="excluir" onClick={excluirConta}>Excluir conta</button>
-          <button className="salvar" onClick={salvarAlteracoes}>Salvar alterações</button>
+          <button className="salvar" type="submit" >Salvar alterações</button>
         </div>
-      </section>
+      </form>
     </main>
   );
 }

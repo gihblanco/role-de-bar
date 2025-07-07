@@ -31,13 +31,13 @@ function Comodidades({ value = [], onChange }) {
   };
 
   const opcoes = [
-    { label: "Espaço para fumantes", value: "fumantes" },
-    { label: "Área Kids", value: "area_kids" },
-    { label: "Pet Friendly", value: "pet_friendly" },
-    { label: "Wi-Fi", value: "wifi" },
-    { label: "Estacionamento", value: "estacionamento" },
-    { label: "Música", value: "musica" },
-    { label: "Acessibilidade", value: "acessibilidade" },
+    { label: "Espaço para fumantes", value: "Espaço para fumantes" },
+    { label: "Área Kids", value: "Área kids" },
+    { label: "Pet Friendly", value: "Pet friendly" },
+    { label: "Wi-Fi", value: "Wi-fi" },
+    { label: "Estacionamento", value: "Estacionamento" },
+    { label: "Música", value: "Música" },
+    { label: "Acessibilidade", value: "Acessibilidade" },
   ];
 
   return (

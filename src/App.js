@@ -45,7 +45,7 @@ function AppContent({ isLogged, setIsLogged, usuarioLogado, setUsuarioLogado }) 
         <Route path="/estabelecimentos" element={<Estabelecimentos setIsLogged={setIsLogged} usuarioLogado={usuarioLogado} />} />
         <Route path="/cadastroEstabelecimento" element={<CadastroEstabelecimento setIsLogged={setIsLogged} usuarioLogado={usuarioLogado} />} />
         <Route path="/favoritos" element={<Favoritos setIsLogged={setIsLogged} usuarioLogado={usuarioLogado} />} />
-        <Route path="/infosEstabelecimento" element={<InfosEstabelecimento setIsLogged={setIsLogged} usuarioLogado={usuarioLogado} />} />
+        <Route path="/infosEstabelecimento/:id" element={<InfosEstabelecimento setIsLogged={setIsLogged} usuarioLogado={usuarioLogado} />} />
         <Route path="/perfil" element={<Perfil setIsLogged={setIsLogged} usuarioLogado={usuarioLogado} />} />
       </Routes>
 

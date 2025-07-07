@@ -66,9 +66,9 @@
   color: #666;
 }
 
-.botao-vermais {
+.botao-card {
   align-self: flex-start;
-  margin-top: 0.5em;
+  margin: 0.5em;
   padding: 0.4em 1em;
   background-color: #f66e06;
   color: white;
