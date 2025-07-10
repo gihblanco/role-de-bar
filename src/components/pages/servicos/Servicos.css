@@ -64,7 +64,6 @@
   line-height: 1.6;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   .servico-card,
   .servico-card.invertido {

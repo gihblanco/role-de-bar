@@ -6,7 +6,9 @@ import SelectEstiloMusical from '../../form/SelectEstiloMusical';
 import SelectTipoEstabelecimento from '../../form/SelectTipoEstabelecimento';
 import CardEstabelecimentos from '../../estabelecimentos/CardEstabelecimento';
 import Cardapio from '../../form/Cardapio';
+import Header from '../../layout/Header';
 import LabelTexto from '../../form/LabelTexto';
+import SelectBairro from '../../form/VerEstabelecimentos';
 import SelectInternoBairros from '../../form/SelectInternoBairros';
 import SelectTipoMusica from '../../form/SelectTipoMusica';
 
@@ -32,7 +34,7 @@ function Estabelecimentos({ setIsLogged, usuarioLogado }) {
 
     const filtrados = todos.filter(estab => {
       const tipo = tipoSelecionado ? estab.tipo === tipoSelecionado : true;
-      const tipoMusicaOK = tipoMusicaSelecionado ? estab.tipoMusica === tipoMusicaSelecionado : true;
+      const tipoMusicaOk = tipoMusicaSelecionado ? estab.tipoMusica === tipoMusicaSelecionado : true;
       const estilo = estiloSelecionado ? estab.estiloMusical === estiloSelecionado : true;
       const comodidades = comodidadesSelecionadas.length > 0
         ? comodidadesSelecionadas.every(comod => estab.comodidades.includes(comod))
@@ -41,7 +43,7 @@ function Estabelecimentos({ setIsLogged, usuarioLogado }) {
       //   ? cardapioSelecionadas.every(cardapio => estab.cardapio.includes(cardapio))
       //   : true;
       const bairro = bairroSelecionado ? estab.bairro === bairroSelecionado : true;
-      return tipo && tipoMusicaOK && estilo && comodidades && bairro;
+      return tipo && tipoMusicaOk && estilo && comodidades && bairro;
     });
 
     setEstabelecimentos(filtrados);
@@ -49,8 +51,7 @@ function Estabelecimentos({ setIsLogged, usuarioLogado }) {
 
   const limparFiltros = () => {
     setTipoSelecionado("");
-    setTipoMusicaSelecionado("");
-    setEstiloSelecionado("");
+    setEstiloSelecionado("")
     setComodidadesSelecionadas([]);
     setBairroSelecionado("");
 
@@ -86,7 +87,7 @@ function Estabelecimentos({ setIsLogged, usuarioLogado }) {
         </aside>
 
         <section id='estabelecimentos'>
-          <CardEstabelecimentos estabelecimentos={estabelecimentos} usuario={usuario}/>
+          <CardEstabelecimentos estabelecimentos={estabelecimentos} />
         </section>
       </div>
     </main>

@@ -3,7 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import StoreMallDirectoryIcon from '@mui/icons-material/StoreMallDirectory';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
-function Servicos({setIsLogged}) {
+function Servicos({ setIsLogged }) {
 
     localStorage.setItem("isLogged", "false");
     setIsLogged(false)
@@ -11,9 +11,7 @@ function Servicos({setIsLogged}) {
     return (
         <main className="servicos-container">
             <h1 className="titulo">Conheça nossos serviços principais:</h1>
-            <p className="descricao">
-                Descubra os melhores bares da cidade ou anuncie o seu! Nosso objetivo é facilitar o seu rolê perfeito.
-            </p>
+            <p className="descricao"> Descubra os melhores bares da cidade ou anuncie o seu! Nosso objetivo é facilitar o seu rolê perfeito.</p>
 
             <section className="servico-card">
                 <div className="icone">
@@ -21,10 +19,8 @@ function Servicos({setIsLogged}) {
                 </div>
                 <div className="conteudo">
                     <h2>Encontre o bar perfeito</h2>
-                    <p>
-                        Com filtros personalizados, você encontra bares que combinam com seu estilo: tipo de música, comodidades do ambiente e localização.
-                        Deixe que o Rolê de Bar monte o rolê por você!
-                    </p>
+                    <p> Com filtros personalizados, você encontra bares que combinam com seu estilo: tipo de música, comodidades do ambiente e localização.
+                        Deixe que o Rolê de Bar monte o rolê por você!</p>
                 </div>
             </section>
 
@@ -34,16 +30,14 @@ function Servicos({setIsLogged}) {
                 </div>
                 <div className="conteudo">
                     <h2>Anuncie seu estabelecimento</h2>
-                    <p>
-                        Cadastre seu estabelecimento e seja descoberto por quem procura novas experiências, melhorando a visibilidade do seu negócio. 
-                        A vitrine ideal para quem quer atrair novos clientes de forma moderna e descomplicada.
-                    </p>
+                    <p>Cadastre seu estabelecimento e seja descoberto por quem procura novas experiências, melhorando a visibilidade do seu negócio.
+                        A vitrine ideal para quem quer atrair novos clientes de forma moderna e descomplicada. </p>
                 </div>
             </section>
 
             <section className="servico-card">
                 <div className='icone'>
-                    <FavoriteBorderIcon fontSize='large'/>
+                    <FavoriteBorderIcon fontSize='large' />
                 </div>
                 <div className='conteudo'>
                     <h2>Favorite os bares</h2>

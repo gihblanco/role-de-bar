@@ -49,7 +49,7 @@ function CadastroEstabelecimento({ setIsLogged, usuarioLogado }) {
   const [cidade, setCidade] = useState('');
   const [estado, setEstado] = useState('');
   const [descricao, setDescricao] = useState('');
-  const [foto, setFoto] = useState(''); // Agora apenas caminho/nome da imagem
+  const [foto, setFoto] = useState(''); 
 
   const buscarCep = async (cepDigitado) => {
     const cepLimpo = cepDigitado.replace(/\D/g, '');
@@ -88,7 +88,7 @@ function CadastroEstabelecimento({ setIsLogged, usuarioLogado }) {
       cidade,
       estado,
       descricao,
-      foto, // Caminho da imagem, ex: "/img/bar1.jpg"
+      foto,
       idProprietario: usuario.id,
     };
 
@@ -99,7 +99,6 @@ function CadastroEstabelecimento({ setIsLogged, usuarioLogado }) {
     alert('Estabelecimento cadastrado com sucesso!');
     setMostrarModal(false);
 
-    // Limpa campos
     setNome('');
     setTipoEstabelecimento('');
     setTipoMusica('');

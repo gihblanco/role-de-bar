@@ -87,9 +87,7 @@ function Perfil({ setIsLogged, usuarioLogado }) {
         {usuario?.tipo === "proprietario" && (
           <div className="form-group">
             <LabelTexto textoLabel="CPF:" />
-            <InputTexto
-              value={cpf} onChange={(e) => setCpf(e.target.value)}
-            />
+            <InputTexto value={cpf} onChange={(e) => setCpf(e.target.value)} />
           </div>
         )}
 
@@ -101,11 +99,7 @@ function Perfil({ setIsLogged, usuarioLogado }) {
         <div className="form-group">
           <LabelTexto textoLabel="Senha:" />
           <div className="senha-container">
-            <InputTexto
-              type={mostrarSenha ? "text" : "password"}
-              value={senha}
-              onChange={(e) => setSenha(e.target.value)}
-            />
+            <InputTexto type={mostrarSenha ? "text" : "password"} value={senha} onChange={(e) => setSenha(e.target.value)}/>
             <button className="mostar-senha" type="button" onClick={() => setMostrarSenha(!mostrarSenha)}>
               {mostrarSenha ? "Ocultar" : "Mostrar"}
             </button>
