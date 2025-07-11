@@ -71,10 +71,7 @@ function Comodidades({ value = [], onChange }) {
         ))}
       </div>
 
-      <textarea
-        placeholder="No estacionamento, banheiros, rampas para pedestres, elevadores..."
-        disabled={exibirAcess} className="area-texto"
-      />
+      <textarea placeholder="No estacionamento, banheiros, rampas para pedestres, elevadores..." disabled={exibirAcess} className="area-texto"/>
     </div>
   );
 }

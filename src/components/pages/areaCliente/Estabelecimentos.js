@@ -39,10 +39,10 @@ function Estabelecimentos({ setIsLogged, usuarioLogado }) {
       const comodidades = comodidadesSelecionadas.length > 0
         ? comodidadesSelecionadas.every(comod => estab.comodidades.includes(comod))
         : true;
+      const bairro = bairroSelecionado ? estab.bairro === bairroSelecionado : true;
       // const cardapioOk = cardapioSelecionadas.length > 0
       //   ? cardapioSelecionadas.every(cardapio => estab.cardapio.includes(cardapio))
       //   : true;
-      const bairro = bairroSelecionado ? estab.bairro === bairroSelecionado : true;
       return tipo && tipoMusicaOk && estilo && comodidades && bairro;
     });
 
@@ -69,8 +69,8 @@ function Estabelecimentos({ setIsLogged, usuarioLogado }) {
           <SelectTipoEstabelecimento value={tipoSelecionado} onChange={setTipoSelecionado} className="filtro-input"
           />
 
-          <LabelTexto htmlFor="tipoMusica" className="filtro-label" textoLabel="Tipo de som:"/>
-          <SelectTipoMusica value={tipoMusicaSelecionado} onChange={setTipoMusicaSelecionado} className="filtro-input"/>
+          <LabelTexto htmlFor="tipoMusica" className="filtro-label" textoLabel="Tipo de som:" />
+          <SelectTipoMusica value={tipoMusicaSelecionado} onChange={setTipoMusicaSelecionado} className="filtro-input" />
 
           <LabelTexto htmlFor="estilo" className="filtro-label" textoLabel="Estilo musical:" />
           <SelectEstiloMusical value={estiloSelecionado} onChange={setEstiloSelecionado} className="filtro-input" />
@@ -87,7 +87,7 @@ function Estabelecimentos({ setIsLogged, usuarioLogado }) {
         </aside>
 
         <section id='estabelecimentos'>
-          <CardEstabelecimentos estabelecimentos={estabelecimentos} />
+          <CardEstabelecimentos estabelecimentos={estabelecimentos} usuario={usuario}/>
         </section>
       </div>
     </main>

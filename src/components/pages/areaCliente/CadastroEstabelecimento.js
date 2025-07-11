@@ -63,11 +63,16 @@ function CadastroEstabelecimento({ setIsLogged, usuarioLogado }) {
           setCidade(dados.localidade || '');
           setEstado(dados.uf || '');
         } else {
-          alert('CEP não encontrado.');
+          alert('O CEP não foi encontrado.');
+          setCep('');
         }
       } catch (error) {
         alert('Erro ao buscar o CEP.');
+        setCep('');
       }
+    } else {
+      alert('O CEP deve ter no máximo 8 dígitos')
+      setCep('');
     }
   };
 
